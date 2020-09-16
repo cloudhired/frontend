@@ -16,7 +16,7 @@ runtime: nodejs
 env: flex
 
 handlers:
-  - url: /.*
+  - url: /
     script: auto
     secure: always
 
