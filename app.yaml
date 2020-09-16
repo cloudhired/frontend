@@ -31,14 +31,14 @@ handlers:
 env_variables:
   HOST: 0.0.0.0
 automatic_scaling:
-  cool_down_period_sec: 120
+  cool_down_period_sec: 60
   min_num_instances: 1
   max_num_instances: 1
   cpu_utilization:
     target_utilization: 0.5
 network: {}
 liveness_check:
-  initial_delay_sec: 300
+  initial_delay_sec: 120
   check_interval_sec: 30
   timeout_sec: 4
   failure_threshold: 4
