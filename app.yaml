@@ -1,24 +1,42 @@
 runtime: nodejs
-env: flex
-
+api_version: '1.0'
+env: flexible
+threadsafe: true
+instance_class: F2
 handlers:
-  - url: /.*
+  - url: /_nuxt/(.*)
     secure: always
-    redirect_http_response_code: 301
+    application_readable: false
+    static_files: .nuxt/dist/client/\1
+    require_matching_file: false
+    upload: .nuxt/dist/client/.*
+  - url: /(.*\.(gif|png|jpg|ico|txt))$
+    secure: always
+    application_readable: false
+    static_files: static/\1
+    require_matching_file: false
+    upload: static/.*\.(gif|png|jpg|ico|txt)$
+  - url: /.*
     script: auto
-    
+    secure: always
 env_variables:
-  HOST: '0.0.0.0'
-
+  HOST: 0.0.0.0
 automatic_scaling:
-  min_num_instances: 1
-  max_num_instances: 2
-  cool_down_period_sec: 180
+  cool_down_period: 120
+  min_num_instances: 2
+  max_num_instances: 20
   cpu_utilization:
-    target_utilization: 0.6
-  target_concurrent_requests: 3
-
-resources:
-  cpu: 1
-  memory_gb: 0.5
-  disk_size_gb: 10
+    target_utilization: 0.5
+network: {}
+liveness_check:
+  initial_delay_sec: 300
+  check_interval_sec: 30
+  timeout_sec: 4
+  failure_threshold: 4
+  success_threshold: 2
+readiness_check:
+  check_interval_sec: 5
+  timeout_sec: 4
+  failure_threshold: 2
+  success_threshold: 2
+  app_start_timeout_sec: 300
