@@ -122,7 +122,7 @@
         <td>51</td>
         <td>+14</td>
         <td>62</td>
-        <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round" title="2016–17 UEFA Europa League">Europa League third qualifying round</a></td>
+        <td>Qualification for the <a href="https://en.wikipedia.org/wiki/2016%E2%80%9317_UEFA_Europa_League#Third_qualifying_round" title="2016–17 UEFA Europa League">Europa League third qualifying round -- Europa League third qualifying round</a></td>
       </tr>
       <tr>
         <th>8</th>
@@ -238,7 +238,8 @@ export default {
 
 .container {
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 10vh;
+  max-width: 1200px;
   display: flex;
   justify-content: center;
   align-items: center;
