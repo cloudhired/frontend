@@ -238,7 +238,7 @@ export default {
 
 .container {
   margin: 0 auto;
-  min-height: 1vh;
+  min-height: 0vh;
   max-width: 1200px;
   display: flex;
   justify-content: center;
