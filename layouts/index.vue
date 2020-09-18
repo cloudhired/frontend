@@ -1,10 +1,10 @@
 <template>
   <div>
-    <section class="container" id="navbar">
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+    <section class="container" id="navbar-container">
+      <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <a class="navbar-item" href="https://bulma.io">
-                <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+                <img src="../static/cloudhired_logo.png" width="112" height="28">
             </a>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -12,7 +12,6 @@
                 <span aria-hidden="true"></span>
             </a>
         </div>
-
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
               <a class="navbar-item">Home</a>
@@ -26,17 +25,13 @@
               </div>
             </div>
         </div>
-    </nav>
+      </nav>
     </section>
-    <section class="section" id="main">
-      <nuxt />
-    </section>
+    <nuxt />
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
-          <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-          <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-          is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+          <strong>CloudHired</strong> by Morgan Gao. All rights reserved. 
         </p>
       </div>
     </footer>
