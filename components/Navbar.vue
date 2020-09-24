@@ -18,21 +18,23 @@
             </div>
 
             <div class="navbar-end">
-              <div class="navbar-item" v-if="$auth.loggedIn">
-                <div class="navbar-item">
-                  <img :src="user.picture"/>
-                </div>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <a class="navbar-link">
-                    {{ user.name }}
-                  </a>
-                  <div class="navbar-dropdown">
-                    <a class="navbar-item">
-                      Edit Profile
-                    </a>
-                    <a class="navbar-item" @click="$auth.logout()">
-                      Log out
-                    </a>
+              <div class="navbar-item" v-if="$auth.loggedIn == false">
+                <!-- <img :src="user.picture"/> -->
+                <div class="dropdown is-right" v-bind:class="[isActive = false ? 'is-active' : '']" @click="toggleClass()">
+                  <div class="dropdown-trigger">
+                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                      <span> button </span>
+                      <span class="icon is-small">
+                        <span class="icon"><fa icon="angle-down"/></span>
+                      </span>
+                    </button>
+                  </div>
+                  <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                    <div class="dropdown-content">
+                      <a class="dropdown-item"> Edit Profile </a>
+                      <hr class="dropdown-divider">
+                      <a class="dropdown-item" @click="$auth.logout()"> Log Out </a>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -48,10 +50,19 @@
 
 <script>
 export default {
+  // data: {
+  //   isActive: true
+  // },
   middleware: 'auth',
   computed: {
     user() {
       return this.$auth.user
+    }
+  },
+  methods: {
+    toggleClass: function (event) {
+      this.isActive = !this.isActive
+      alert("cliecked")
     }
   }
 }
