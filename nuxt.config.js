@@ -57,8 +57,14 @@ export default {
     // axios is required by @nuxtjs/auth
     '@nuxtjs/axios',
     // https://auth.nuxtjs.org
-    '@nuxtjs/auth'
+    '@nuxtjs/auth',
+    '@nuxt/http',
   ],
+
+  serverMiddleware: {
+    '/api': '~/api'
+  },
+
   auth: {
     redirect: {
       login: '/', // redirect user when not connected

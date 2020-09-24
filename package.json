@@ -11,16 +11,18 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxtjs/auth": "^4.9.0",
-    "@nuxtjs/axios": "^5.9.7",
     "@fortawesome/fontawesome-svg-core": "^1.2.28",
-    "@nuxtjs/bulma": "^1.2.1",
-    "nuxt": "^2.0.0",
     "@fortawesome/free-brands-svg-icons": "^5.13.0",
     "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@nuxt/http": "^0.5.12",
+    "@nuxtjs/auth": "^4.9.0",
+    "@nuxtjs/axios": "^5.9.7",
+    "@nuxtjs/bulma": "^1.2.1",
     "@nuxtjs/fontawesome": "^1.1.2",
     "@nuxtjs/style-resources": "^1.0.0",
+    "mongodb": "^3.6.2",
     "node-sass": "^4.14.1",
+    "nuxt": "^2.0.0",
     "sass-loader": "^8.0.2"
   }
 }
