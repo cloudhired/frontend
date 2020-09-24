@@ -1,5 +1,16 @@
 import { Router } from 'express'
 
+
+// connect to MongoDB
+const MongoClient = require('mongodb').MongoClient;
+const uri = "mongodb+srv://ch-user:FhDne1WoX3qI2wIm@cloudhired.c58f7.gcp.mongodb.net/cloudhired?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+
+async function getCollection() {
+  await client.connect()
+  return client.db("professionals").collection("professional_profiles").findOne({ name: "Morgan Gao" });
+}
+
 const router = Router()
 
 // Mock Users
@@ -10,8 +21,9 @@ const users = [
 ]
 
 /* GET users listing. */
-router.get('/users', function (req, res, next) {
-  res.json(users)
+router.get('/users', async function (req, res, next) {
+  const pros = await getCollection();
+  res.send(pros)
 })
 
 /* GET user by ID. */
