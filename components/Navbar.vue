@@ -18,12 +18,12 @@
             </div>
 
             <div class="navbar-end">
-              <div class="navbar-item" v-if="$auth.loggedIn == false">
-                <!-- <img :src="user.picture"/> -->
-                <div class="dropdown is-right" v-bind:class="[isActive = false ? 'is-active' : '']" @click="toggleClass()">
+              <div class="navbar-item" v-if="$auth.loggedIn">
+                <div class="dropdown is-right" v-bind:class="[isActive ? 'is-active' : '']" @click="toggleClass()">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                      <span> button </span>
+                      <img :src="user.picture"/>
+                      <span> {{ user.name }} </span>
                       <span class="icon is-small">
                         <span class="icon"><fa icon="angle-down"/></span>
                       </span>
@@ -39,8 +39,8 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                  <a class="button is-white small-padding">Sign up</a>
-                  <a class="button is-white small-padding" @click="$auth.loginWith('auth0')">Log in</a>
+                <a class="button is-white small-padding">Sign up</a>
+                <a class="button is-white small-padding" @click="$auth.loginWith('auth0')">Log in</a>
               </div>
             </div>
         </div>
@@ -50,9 +50,11 @@
 
 <script>
 export default {
-  // data: {
-  //   isActive: true
-  // },
+  data() {
+    return {
+      isActive: false
+    }
+  },
   middleware: 'auth',
   computed: {
     user() {
@@ -62,7 +64,6 @@ export default {
   methods: {
     toggleClass: function (event) {
       this.isActive = !this.isActive
-      alert("cliecked")
     }
   }
 }

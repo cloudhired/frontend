@@ -258,6 +258,18 @@ export default {
   layout: 'index',
   components: {
     Logo
+  },
+  head() {
+    return {
+      title: 'CloudHired - Cloud Professionals are here!',
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: 'My custom description'
+          }
+        ]
+    }
   }
 }
 </script>
