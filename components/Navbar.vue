@@ -18,12 +18,41 @@
             </div>
 
             <div class="navbar-end">
-              <div class="navbar-item">
+              <div class="navbar-item" v-if="$auth.loggedIn">
+                <div class="navbar-item">
+                  <img :src="user.picture"/>
+                </div>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <a class="navbar-link">
+                    {{ user.name }}
+                  </a>
+                  <div class="navbar-dropdown">
+                    <a class="navbar-item">
+                      Edit Profile
+                    </a>
+                    <a class="navbar-item" @click="$auth.logout()">
+                      Log out
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="navbar-item" v-else>
                   <a class="button is-white small-padding">Sign up</a>
-                  <a href="https://cloudhired.com/login" class="button is-white small-padding">Log in</a>
+                  <a class="button is-white small-padding" @click="$auth.loginWith('auth0')">Log in</a>
               </div>
             </div>
         </div>
       </nav>
     </section>
 </template>
+
+<script>
+export default {
+  middleware: 'auth',
+  computed: {
+    user() {
+      return this.$auth.user
+    }
+  }
+}
+</script>
