@@ -96,7 +96,7 @@
             <td>USA</td>
             <td>Humana</td>
             <td>2</td>
-            <td>5</td>
+            <td>{{ ip }}</td>
           </tr>
 
         </tbody>
@@ -112,6 +112,10 @@ export default {
   layout: 'index',
   components: {
     Logo
+  },
+  async asyncData({ $axios }) {
+    const ip = await $axios.$get('/api/users')
+    return { ip }
   },
   head() {
     return {
