@@ -1,17 +1,6 @@
 import { Router } from 'express'
-var db = require('../db')
-
-// connect to MongoDB
-// const MongoClient = require('mongodb').MongoClient;
-// const uri = "mongodb+srv://ch-user:FhDne1WoX3qI2wIm@cloudhired.c58f7.gcp.mongodb.net/cloudhired?retryWrites=true&w=majority";
-// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-
-// async function getCollection() {
-//   await client.connect()
-//   return client.db("professionals").collection("professional_profiles");
-// }
-
 const router = Router()
+const db = require('../db')
 
 // Mock Users
 const users = [

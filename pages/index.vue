@@ -49,12 +49,12 @@
           </tr>
         </tfoot> -->
         <tbody>
-          <tr v-for="pro in ip" :key="pro.name">
-            <th> {{ pro.name }} </th>
-            <td> {{pro.location }} </td>
-            <td> {{pro.company }} </td>
-            <td> {{pro.yoe }} </td>
-            <td> {{pro.certifications }} </td>
+          <tr v-for="user in users" :key="user.name">
+            <th> {{ user.name }} </th>
+            <td> {{user.location }} </td>
+            <td> {{user.company }} </td>
+            <td> {{user.yoe }} </td>
+            <td> {{user.certifications }} </td>
           </tr>
         </tbody>
       </table>
@@ -70,9 +70,10 @@ export default {
   components: {
     Logo
   },
+  // TODO: when nav back to index, there occurs network error and couldn't render the page. I suspect it is because of this function. 
   async asyncData({ $axios }) {
-    const ip = await $axios.$get('/api/users')
-    return { ip }
+    const users = await $axios.$get('/api/users')
+    return { users }
   },
   head() {
     return {
