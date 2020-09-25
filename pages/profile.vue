@@ -1,6 +1,13 @@
 <template>
-  <div>
-    <p> Welcome back {{ user.name }} </p>
+  <div class="container profile">
+    <div class="columns wide">
+      <div class="column is-two-thirds test">
+        First column
+      </div>
+      <div class="column is-one-third test">
+        Place holder for future use: probably job recommendations
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,9 +48,9 @@ export default {
 
 // @import '~assets/scss/main.scss';
 
-.container {
-  margin: 10px auto;
-  min-height: 0vh;
+.container.profile {
+  margin: 20px auto;
+  min-height: 10vh;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -54,6 +61,12 @@ export default {
   margin-bottom: 300px;
 }
 
+.columns.wide {
+  width: 100%
+}
+.column.test {
+  border: solid red 1px;
+}
 .table.is-full {
   width: 100%;
 }
