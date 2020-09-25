@@ -8,7 +8,7 @@ const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology:
 
 async function getCollection() {
   await client.connect()
-  return client.db("professionals").collection("professional_profiles");
+  return client.db("professionals").collection("professional_profiles").findOne({ name: "Morgan Gao" });
 }
 
 const router = Router()
@@ -23,7 +23,7 @@ const users = [
 /* GET users listing. */
 router.get('/users', async function (req, res, next) {
   const pros = await getCollection();
-  res.send(await pros.find({}).toArray())
+  res.send(pros)
 })
 
 /* GET user by ID. */
