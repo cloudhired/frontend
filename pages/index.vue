@@ -28,7 +28,7 @@
         </div>
       </nav>
     </section>
-    <section class="container">
+    <section class="container main-page">
       <table class="table is-striped is-bordered is-hoverable is-full">
         <thead>
           <tr>
@@ -49,56 +49,13 @@
           </tr>
         </tfoot> -->
         <tbody>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
+          <tr v-for="pro in ip" :key="pro.name">
+            <th> {{ pro.name }} </th>
+            <td> {{pro.location }} </td>
+            <td> {{pro.company }} </td>
+            <td> {{pro.yoe }} </td>
+            <td> {{pro.certifications }} </td>
           </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>5</td>
-          </tr>
-          <tr>
-            <th>Morgan Gao</th>
-            <td>USA</td>
-            <td>Humana</td>
-            <td>2</td>
-            <td>{{ ip }}</td>
-          </tr>
-
         </tbody>
       </table>
     </section>
@@ -144,6 +101,9 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+.container.main-page {
+  margin-bottom: 300px;
 }
 
 .table.is-full {
