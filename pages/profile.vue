@@ -2,7 +2,15 @@
   <div class="container profile">
     <div class="columns wide">
       <div class="column is-two-thirds test">
-        First column
+        <div class="container profile left">
+          <p> Here you are</p>
+        </div>
+        <div class="container profile left">
+          <p> Here you are</p>
+        </div>
+        <div class="container profile left">
+          <p> Here you are</p>
+        </div>
       </div>
       <div class="column is-one-third test">
         Place holder for future use: probably job recommendations
@@ -57,6 +65,14 @@ export default {
   align-items: center;
   text-align: center;
 }
+
+.container.profile.left {
+  margin: 0 auto;
+  min-height: 10rem;
+  width: 100%;
+  border:solid red 1px;
+}
+
 .container.main-page {
   margin-bottom: 300px;
 }
