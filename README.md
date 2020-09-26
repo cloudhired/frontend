@@ -1,4 +1,4 @@
-# nuxt-bulma-setup
+# CloudHired
 
 > How to set up Bulma in Nuxt.js
 
