@@ -4,6 +4,7 @@
       <div class="column is-two-thirds test">
         <div class="container profile left">
           <p> Here you are</p>
+          <img :src="user.picture"/>
         </div>
         <div class="container profile left">
           <p> Here you are</p>
