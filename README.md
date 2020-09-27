@@ -1,6 +1,6 @@
-# nuxt-bulma-setup
+# CloudHired
 
-> How to set up Bulma in Nuxt.js
+> Set up and run Cloudhired locally.
 
 ## Build Setup
 
