@@ -7,7 +7,7 @@
           <img :src="user.picture"/>
         </div>
         <div class="container profile left">
-          <p> Here you are</p>
+          <p> Here you are {{ this.$route.params.id }} </p>
         </div>
         <div class="container profile left">
           <p> Here you are</p>
