@@ -21,7 +21,7 @@
                 <div id="navbar-dropdown" class="dropdown is-right"  v-bind:class="[isDropped ? 'is-active' : '']" @click="isDropped = !isDropped">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                      <img :src="user.picture"/>
+                      <img style="margin-right:.5rem" :src="user.picture"/>
                       <span> {{ user.name }} </span>
                       <span class="icon is-small">
                         <span class="icon"><fa icon="angle-down"/></span>
