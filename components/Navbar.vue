@@ -18,7 +18,7 @@
             </div>
             <div class="navbar-end">
               <div class="navbar-item end" v-if="$auth.loggedIn">
-                <div id="navbar-dropdown" class="dropdown is-right"  @click="toggleClass()">
+                <div id="navbar-dropdown" class="dropdown is-right"  v-bind:class="[isDropped ? 'is-active' : '']" @click="isDropped = !isDropped">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                       <img :src="user.picture"/>
@@ -60,10 +60,10 @@ export default {
       return this.$auth.user
     }
   },
-  methods: {
-    toggleClass: function (event) {
-      document.getElementById("navbar-dropdown").classList.toggle("is-active")
-    }
-  }
+  // methods: {
+  //   toggleClass: function (event) {
+  //     document.getElementById("navbar-dropdown").classList.toggle("is-active")
+  //   }
+  // }
 }
 </script>
