@@ -29,8 +29,8 @@
       </nav>
     <!-- </div> -->
     <div class="">
-      <table class="table is-striped is-bordered is-hoverable is-full">
-        <thead>
+      <table class="table is-hoverable is-full">
+        <!-- <thead>
           <tr>
             <th>Name</th>
             <th>Location</th>
@@ -38,7 +38,7 @@
             <th><abbr title="Year of Experience">YOE</abbr></th>
             <th><abbr title="Certifications Earned">Certifications</abbr></th>
           </tr>
-        </thead>
+        </thead> -->
         <!-- <tfoot>
           <tr>
             <th>Name</th>
@@ -49,7 +49,7 @@
           </tr>
         </tfoot> -->
         <tbody>
-          <tr v-for="user in users" :key="user.name">
+          <tr style="height:6rem" v-for="user in users" :key="user.name">
             <th> {{ user.name }} </th>
             <td> {{user.location }} </td>
             <td> {{user.company }} </td>

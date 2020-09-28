@@ -1,7 +1,12 @@
 @import "~bulma/sass/utilities/_all.sass";
 
+$background-color: #fafafa;
 
 $titlecolor:red;
+$table-color: green;
+$table-cell-border-width: 0 0 1rem;
+$table-cell-border: 1rem solid #fafafa;
+$table-row-hover-background-color: #e6e6e6;
 
 
 @import "~bulma/bulma";
