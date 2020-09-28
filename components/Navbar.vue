@@ -30,7 +30,7 @@
                   </div>
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <nuxt-link to="/profile" class="dropdown-item">Edit Profile</nuxt-link>
+                      <nuxt-link :to="{ name: 'ch-id', params: { id: user.nickname }}" class="dropdown-item">Edit Profile</nuxt-link>
                       <hr class="dropdown-divider">
                       <a class="dropdown-item" @click="$auth.logout()"> Log Out </a>
                     </div>
@@ -62,7 +62,7 @@ export default {
   },
   // methods: {
   //   toggleClass: function (event) {
-  //     document.getElementById("navbar-dropdown").classList.toggle("is-active")
+  //     alert(JSON.stringify(this.$auth.user))
   //   }
   // }
 }
