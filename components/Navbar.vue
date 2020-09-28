@@ -1,5 +1,5 @@
 <template>
-    <section class="section-main" id="navbar-container">
+    <section class="section" id="navbar-container">
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item start" to="/">

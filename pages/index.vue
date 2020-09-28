@@ -1,5 +1,5 @@
 <template>
-  <section class="section-main">
+  <section class="section">
     <!-- <div class="" id="level-container" v-if="$auth.loggedIn"> -->
       <nav class="level level-custom">
         <div class="level-item has-text-centered">

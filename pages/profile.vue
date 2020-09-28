@@ -1,6 +1,6 @@
 <template>
-  <div class="container profile">
-    <div class="columns wide">
+  <section class="section profile">
+    <div class="columns profile">
       <div class="column is-two-thirds test">
         <div class="container profile left">
           <p> Here you are</p>
@@ -17,7 +17,7 @@
         Place holder for future use: probably job recommendations
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>
@@ -57,14 +57,9 @@ export default {
 
 // @import '~assets/scss/main.scss';
 
-.container.profile {
-  margin: 20px auto;
-  min-height: 10vh;
-  max-width: 1200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.section.profile {
+    display: flex;
+    justify-content: center;
 }
 
 .container.profile.left {
@@ -78,41 +73,11 @@ export default {
   margin-bottom: 300px;
 }
 
-.columns.wide {
-  width: 100%
+.columns.profile {
+  width: 100%;
+  margin-top: 1rem;
 }
 .column.test {
   border: solid red 1px;
-}
-.table.is-full {
-  width: 100%;
-}
-
-.level-custom {
-  width: 100%;
-  border: 1px solid #dbdbdb;
-  padding: 20px 0;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 600;
-  font-size: 2rem;
-  color: #363636;     // color: $titlecolor;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
 }
 </style>

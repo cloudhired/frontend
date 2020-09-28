@@ -95,5 +95,6 @@ body {
 
 .section-main {
   padding: 0;
+  margin: 0 auto;
 }
 </style>
