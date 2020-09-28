@@ -1,8 +1,8 @@
 <template>
-    <section class="navbar container" id="navbar-container">
+    <section class="section-main" id="navbar-container">
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-            <nuxt-link class="navbar-item" to="/">
+            <nuxt-link class="navbar-item start" to="/">
                 <img src="../static/cloudhired_logo.png" width="112" height="28">
             </nuxt-link>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
@@ -17,7 +17,7 @@
               <a class="navbar-item">Read</a>
             </div>
             <div class="navbar-end">
-              <div class="navbar-item" v-if="$auth.loggedIn">
+              <div class="navbar-item end" v-if="$auth.loggedIn">
                 <div id="navbar-dropdown" class="dropdown is-right"  @click="toggleClass()">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
@@ -62,20 +62,8 @@ export default {
   },
   methods: {
     toggleClass: function (event) {
-      alert(document.getElementById("navbar-dropdown").classList.toggle("is-active"))
+      document.getElementById("navbar-dropdown").classList.toggle("is-active")
     }
   }
 }
 </script>
-
-<style lang="scss">
-
-.navbar.container {
-    margin: 10px auto;
-    max-width: 1200px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-</style>

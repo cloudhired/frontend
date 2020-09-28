@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <section class="container" id="level-container" v-if="$auth.loggedIn">
+  <section class="section-main">
+    <!-- <div class="" id="level-container" v-if="$auth.loggedIn"> -->
       <nav class="level level-custom">
         <div class="level-item has-text-centered">
           <div>
@@ -27,8 +27,8 @@
           </div>
         </div>
       </nav>
-    </section>
-    <section class="container main-page">
+    <!-- </div> -->
+    <div class="">
       <table class="table is-striped is-bordered is-hoverable is-full">
         <thead>
           <tr>
@@ -58,8 +58,8 @@
           </tr>
         </tbody>
       </table>
-    </section>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script>

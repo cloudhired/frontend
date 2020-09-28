@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main-layout">
     <navbar/>
     <nuxt/>
     <main-footer/>
@@ -38,10 +38,6 @@ html {
   margin: 0;
 }
 
-.navbar {
-  width: 1200px;
-}
-
 .button.is-white {
   font-size: smaller;
 }
@@ -78,5 +74,22 @@ html {
 .button--grey:hover {
   color: #fff;
   background-color: #35495e;
+}
+
+.main-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.navbar-item.end {
+  padding-right: 0;
+}
+
+.navbar-item.start {
+  padding-left: 0;
+}
+
+.section-main {
+  padding: 0;
 }
 </style>
