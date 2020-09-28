@@ -1,5 +1,5 @@
 <template>
-    <section class="container" id="navbar-container">
+    <section class="navbar container" id="navbar-container">
       <nav class="navbar" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item" to="/">
@@ -18,7 +18,7 @@
             </div>
             <div class="navbar-end">
               <div class="navbar-item" v-if="$auth.loggedIn">
-                <div class="dropdown is-right" v-bind:class="[isActive ? 'is-active' : '']" @click="toggleClass()">
+                <div id="navbar-dropdown" class="dropdown is-right"  @click="toggleClass()">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
                       <img :src="user.picture"/>
@@ -51,7 +51,7 @@
 export default {
   data() {
     return {
-      isActive: false
+      isDropped: false
     }
   },
   middleware: 'auth',
@@ -62,8 +62,20 @@ export default {
   },
   methods: {
     toggleClass: function (event) {
-      this.isActive = !this.isActive
+      alert(document.getElementById("navbar-dropdown").classList.toggle("is-active"))
     }
   }
 }
 </script>
+
+<style lang="scss">
+
+.navbar.container {
+    margin: 10px auto;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+</style>
