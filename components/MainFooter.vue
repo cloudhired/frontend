@@ -6,11 +6,11 @@
           <a> About </a>
           <a> Contact </a>
           <a> Privacy & Terms </a>
-          <a> Security </a>
+          <a> Bugs </a>
         </div>
         <div class="column is-half has-text-right">
           <p>
-            Copyright 2020 &copy; CloudHired, LLC. All rights reserved. 
+            Copyright &copy; 2020 CloudHired, LLC. All rights reserved. 
           </p>
         </div>
       </div>
