@@ -81,8 +81,21 @@ body {
 }
 
 .main-layout {
-  max-width: 1200px;
+  max-width: $main-max-width;
   margin: 0 auto;
+}
+
+.navbar {
+  border-bottom: $main-border-style;
+}
+
+.navbar-item a {
+  border-bottom: solid rgba($color: $primary, $alpha: .5) 1px;
+  color:rgba($color: #000000, $alpha: 1.0)
+}
+
+.navbar-item a:hover {
+  color: $primary;
 }
 
 .navbar-item.end {

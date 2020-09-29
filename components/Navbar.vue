@@ -1,6 +1,6 @@
 <template>
     <section class="section" id="navbar-container">
-      <nav class="navbar" role="navigation" aria-label="main navigation">
+      <nav class="navbar pb-4" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item start" to="/">
                 <img src="../static/cloudhired_logo.png" width="112" height="28">
@@ -13,8 +13,8 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <a class="navbar-item">Home</a>
-              <a class="navbar-item">Read</a>
+              <div class="navbar-item"><a>Home</a></div>
+              <div class="navbar-item"><a>Read</a></div>
             </div>
             <div class="navbar-end">
               <div class="navbar-item end" v-if="$auth.loggedIn">
@@ -38,8 +38,7 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a class="button is-white small-padding">Sign up</a>
-                <a class="button is-white small-padding" @click="$auth.loginWith('auth0')">Log in</a>
+                <a @click="$auth.loginWith('auth0')">Log in</a>
               </div>
             </div>
         </div>

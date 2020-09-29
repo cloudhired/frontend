@@ -13,7 +13,7 @@
 <style lang="scss">
 
 .footer.main {
-  border-top: solid 1px rgba($color: #cdcfd2, $alpha: .7);
+  border-top: $main-border-style;
 }
 
 </style>
