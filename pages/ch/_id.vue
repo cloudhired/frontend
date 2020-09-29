@@ -1,20 +1,22 @@
 <template>
   <section class="section profile">
     <div class="columns profile">
-      <div class="column is-two-thirds test">
+      <div class="column is-two-thirds pl-0">
         <div class="container profile left">
           <p> Here you are</p>
           <img :src="user.picture"/>
         </div>
-        <div class="container profile left">
+        <div class="container profile">
           <p> Here you are {{ this.$route.params.id }} </p>
         </div>
-        <div class="container profile left">
+        <div class="container profile">
           <p> Here you are</p>
         </div>
       </div>
-      <div class="column is-one-third test">
-        Place holder for future use: probably job recommendations
+      <div class="column is-one-third pr-0">
+        <div class="container profile">
+          Place holder for future use: probably job recommendations
+        </div>
       </div>
     </div>
   </section>
@@ -62,11 +64,12 @@ export default {
     justify-content: center;
 }
 
-.container.profile.left {
+.container.profile {
   margin: 0 auto;
-  min-height: 10rem;
   width: 100%;
-  border:solid red 1px;
+  border:solid #e0e0e0 1px;
+  margin-bottom: 1rem;
+  background-color: white
 }
 
 .container.main-page {
@@ -77,7 +80,7 @@ export default {
   width: 100%;
   margin-top: 1rem;
 }
-.column.test {
-  border: solid red 1px;
-}
+// .column.test {
+//   border: solid red 1px;
+// }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div style="margin-top:8rem">
+  <div class="mt-6">
     <footer class="footer">
       <div class="content has-text-centered">
         <p>
