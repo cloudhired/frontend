@@ -1,6 +1,6 @@
 <template>
     <section class="section" id="navbar-container">
-      <nav class="navbar pb-4" role="navigation" aria-label="main navigation">
+      <nav class="navbar py-4" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item start" to="/">
                 <img src="../static/cloudhired_logo.png" width="112" height="28">
@@ -13,7 +13,10 @@
         </div>
         <div id="navbarBasicExample" class="navbar-menu">
             <div class="navbar-start">
-              <div class="navbar-item"><a>Home</a></div>
+              <div class="navbar-item"><a>About</a></div>
+              <div class="navbar-item"><a>Professionals Directory</a></div>
+              <div class="navbar-item"><a>Jobs</a></div>
+              <div class="navbar-item"><a>Companies</a></div>
               <div class="navbar-item"><a>Read</a></div>
             </div>
             <div class="navbar-end">
