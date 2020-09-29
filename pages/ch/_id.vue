@@ -15,7 +15,15 @@
       </div>
       <div class="column is-one-third pr-0">
         <div class="container profile">
-          Place holder for future use: probably job recommendations
+          <span> holder for future use: probably job recommendations </span>
+        </div>
+        <div class="container profile">
+          <p> Maybe three sections: recommended by page owner; recommended by system; and recommended jobs </p>
+        </div>
+        <div class="container profile">
+          <p> The first section is a very exciting feature because the page owner actually has control of the things displayed on their
+            page. They can recommend their mentorees and maybe <strong> the jobs </strong> from their company. (they will have to list first)
+            and the rest of it is just site wide recommendations </p>
         </div>
       </div>
     </div>
