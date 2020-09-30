@@ -91,6 +91,24 @@ export default {
     justify-content: center;
 }
 
+.container.profile {
+  margin: 0 auto;
+  width: 100%;
+  border:solid #e0e0e0 1px;
+  margin-bottom: 1rem;
+  background-color: white
+}
+
+.container.main-page {
+  margin-bottom: 300px;
+}
+
+.columns.profile {
+  min-height: 700px;
+  width: 100%;
+  margin-top: 1rem;
+}
+
 .profile.basic {
   display: block;
   margin: 1rem auto;
@@ -115,23 +133,6 @@ export default {
   text-align: left;
 }
 
-.container.profile {
-  margin: 0 auto;
-  width: 100%;
-  border:solid #e0e0e0 1px;
-  margin-bottom: 1rem;
-  background-color: white
-}
 
-.container.main-page {
-  margin-bottom: 300px;
-}
 
-.columns.profile {
-  width: 100%;
-  margin-top: 1rem;
-}
-// .column.test {
-//   border: solid red 1px;
-// }
 </style>
