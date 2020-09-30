@@ -3,8 +3,27 @@
     <div class="columns profile">
       <div class="column is-two-thirds pl-0">
         <div class="container profile left">
-          <p> Here you are</p>
-          <img :src="user.picture"/>
+          <div class="profile basic left">
+            <div class="container">
+              <figure class="image is-128x128">
+                <img class="is-rounded" :src="user.picture"/>
+              </figure> 
+            </div>
+            <div class="container">
+              <ul class="profile">
+                <li> {{ user.name }} </li>
+                <li> Software Engineer </li>
+              </ul>
+            </div>
+          </div>
+          <div class="profile basic right">
+            <ul class="profile">
+              <li> line one</li>
+              <li> line two </li>
+              <li> line three </li>
+              <li> line four </li>
+            </ul>
+          </div>
         </div>
         <div class="container profile">
           <p> Here you are {{ this.$route.params.id }} </p>
@@ -70,6 +89,29 @@ export default {
 .section.profile {
     display: flex;
     justify-content: center;
+}
+
+.profile.basic {
+  display: block;
+  margin: 1rem auto;
+}
+
+.profile.basic.left {
+  width: 40%;
+  border-right: $main-border-style;
+}
+
+.profile.basic.right {
+  width: 60%;
+}
+
+.profile ul {
+  text-align: left;
+}
+
+.profile.basic.right ul {
+  margin-left: 3rem;
+  text-align: left;
 }
 
 .container.profile {
