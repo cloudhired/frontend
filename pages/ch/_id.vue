@@ -106,6 +106,7 @@ export default {
 }
 
 .profile ul {
+  margin-top: 1rem;
   text-align: left;
 }
 
