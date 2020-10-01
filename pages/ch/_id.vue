@@ -10,7 +10,7 @@
               </figure> 
             </div>
             <div class="container">
-              <ul class="profile">
+              <ul class="profile mt-1">
                 <li> {{ user.name }} </li>
                 <li> Software Engineer </li>
               </ul>
@@ -18,10 +18,10 @@
           </div>
           <div class="profile basic right">
             <ul class="profile">
-              <li> <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span>Louisville, KY, USA</span></li>
-              <li> <span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span>Humana Inc.</span></li>
-              <li> <span class="icon"><fa :icon="['fa', 'brain']"/></span> <span>5 years of experience</span></li>
-              <li> <span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a href="https://gaomengen.com"> https://gaomengen.com </a></span></li>
+              <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span>Louisville, KY, USA</span></li>
+              <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span>Humana Inc.</span></li>
+              <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span>5 years of experience</span></li>
+              <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a href="https://gaomengen.com"> https://gaomengen.com </a></span></li>
               <li class="social"> 
                 <a href=""><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
                 <a href=""><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
@@ -172,12 +172,11 @@ export default {
 }
 
 .profile li {
-  height: 2rem;
+  height: 1.5rem;
 }
 
 .profile li.social {
   font-size: 2rem;
-  margin-top: 1rem;
 }
 
 .profile li span {
