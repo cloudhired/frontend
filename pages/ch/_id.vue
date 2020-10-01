@@ -18,11 +18,15 @@
           </div>
           <div class="profile basic right">
             <ul class="profile">
-              <li> <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span><span>Louisville, KY, USA</span></li>
-              <li> Works at Humana Inc. </li>
-              <li> YOE: 5 </li>
-              <li> Web: <a href="https://gaomengen.com"> https://gaomengen.com </a></li>
-              <li> social media </li>
+              <li> <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span>Louisville, KY, USA</span></li>
+              <li> <span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span>Humana Inc.</span></li>
+              <li> <span class="icon"><fa :icon="['fa', 'brain']"/></span> <span>5 years of experience</span></li>
+              <li> <span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a href="https://gaomengen.com"> https://gaomengen.com </a></span></li>
+              <li class="social"> 
+                <a href=""><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
+                <a href=""><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
+                <a href=""><span class="icon mx-1"><fa icon="envelope-square"/></span></a>
+              </li>
             </ul>
           </div>
         </div>
@@ -169,6 +173,15 @@ export default {
 
 .profile li {
   height: 2rem;
+}
+
+.profile li.social {
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.profile li span {
+  vertical-align: middle;
 }
 
 .profile.basic.right ul {
