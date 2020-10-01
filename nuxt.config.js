@@ -39,7 +39,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faEnvelope','faLock','faSignInAlt', 'faAngleDown'],
+      solid: ['faEnvelope','faLock','faSignInAlt', 'faAngleDown', 'faGlobeAmericas'],
       brands: ['faGoogle', 'faLinkedin']
     }
   },

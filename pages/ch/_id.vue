@@ -18,18 +18,53 @@
           </div>
           <div class="profile basic right">
             <ul class="profile">
-              <li> line one</li>
-              <li> line two </li>
-              <li> line three </li>
-              <li> line four </li>
+              <li> <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span><span>Louisville, KY, USA</span></li>
+              <li> Works at Humana Inc. </li>
+              <li> YOE: 5 </li>
+              <li> Web: <a href="https://gaomengen.com"> https://gaomengen.com </a></li>
+              <li> social media </li>
             </ul>
           </div>
         </div>
-        <div class="container profile">
-          <p> Here you are {{ this.$route.params.id }} </p>
+        <div class="container profile block">
+          <div class="profile t">
+            <strong> Introduction </strong>
+          </div>
+          <div class="profile t">
+            <p> Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. </p>
+          </div>
         </div>
-        <div class="container profile">
-          <p> Here you are</p>
+        <div class="container profile block">
+          <div class="profile t">
+            <strong> Skills </strong>
+          </div>
+          <div class="profile t">
+            <p> Here are the skills I have. Render skills with tag like label </p>
+          </div>
+        </div>
+        <div class="container profile block">
+          <div class="profile t">
+            <strong> Certifications </strong>
+          </div>
+          <div class="profile t">
+            <p> Certifications I have got so far. Use ul li to present </p>
+          </div>
+        </div>
+        <div class="container profile block">
+          <div class="profile t">
+            <strong> Courses </strong>
+          </div>
+          <div class="profile t">
+            <p> The courses I have taked to sharpen my skills </p>
+          </div>
+        </div><div class="container profile block">
+          <div class="profile t">
+            <strong> Porfilio </strong>
+          </div>
+          <div class="profile t">
+            <p> Check what I have done so far. </p>
+            <p> and also my GitHub activity. </p>
+          </div>
         </div>
       </div>
       <div class="column is-one-third pr-0">
@@ -99,6 +134,10 @@ export default {
   background-color: white
 }
 
+.container.profile.block {
+  display: block;
+}
+
 .container.main-page {
   margin-bottom: 300px;
 }
@@ -124,13 +163,23 @@ export default {
 }
 
 .profile ul {
-  margin-top: 1rem;
+  margin-top: 0rem;
   text-align: left;
+}
+
+.profile li {
+  height: 2rem;
 }
 
 .profile.basic.right ul {
   margin-left: 3rem;
   text-align: left;
+}
+
+.profile.t {
+  // width: 100%;
+  text-align: left;
+  margin: 1.5rem;
 }
 
 
