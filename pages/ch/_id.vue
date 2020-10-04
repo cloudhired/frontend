@@ -32,7 +32,12 @@
         </div>
         <div class="container profile block">
           <div class="profile t">
-            <strong> Introduction </strong>
+            <div style="flex:1">
+              <strong> Introduction </strong>
+            </div>
+            <div >
+              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
+            </div>
           </div>
           <div class="profile t">
             <p> Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. </p>
@@ -40,18 +45,103 @@
         </div>
         <div class="container profile block">
           <div class="profile t">
-            <strong> Skills </strong>
+            <div style="flex:1">
+              <strong> Skills </strong>
+            </div>
+            <div >
+              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
+            </div>
           </div>
-          <div class="profile t">
-            <p> Here are the skills I have. Render skills with tag like label </p>
+          
+          <div class="field is-grouped is-grouped-multiline mx-4 my-4">
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Technology</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Cloud Computing</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">GCP</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Python</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Node.js</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Nuxt.js</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Linux</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Eating</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Drinking</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
+            <div class="control">
+              <div class="tags has-addons">
+                <a class="tag is-link">Couching</a>
+                <a class="tag is-delete"></a>
+              </div>
+            </div>
           </div>
         </div>
         <div class="container profile block">
           <div class="profile t">
-            <strong> Certifications </strong>
+            <div style="flex:1">
+              <strong> Certifications </strong>
+            </div>
+            <div >
+              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
+            </div>
           </div>
           <div class="profile t">
-            <p> Certifications I have got so far. Use ul li to present </p>
+            <table class="table cert">
+              <tbody>
+                <tr>
+                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td style="vertical-align: middle">Google Cloud Professional Architect</td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td style="vertical-align: middle">Google Cloud Professional Developer</td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td style="vertical-align: middle">Google Cloud Professional Data Engineer</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="container profile block">
@@ -190,8 +280,14 @@ export default {
 
 .profile.t {
   // width: 100%;
+  display: flex;
   text-align: left;
-  margin: 1.5rem;
+  margin: 1rem;
+}
+
+.table.cert td {
+  border-bottom: 0;
+  padding: .25rem .25rem;
 }
 
 
