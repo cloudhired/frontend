@@ -4,9 +4,9 @@
       <div class="columns">
         <div class="column is-half has-text-left ">
           <a> About </a>
-          <a> Contact </a>
+          <a> Contact Us </a>
           <a> Privacy & Terms </a>
-          <a> Bugs </a>
+          <a> Report Bugs </a>
         </div>
         <div class="column is-half has-text-right">
           <p>

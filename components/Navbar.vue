@@ -41,7 +41,7 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a @click="$auth.loginWith('auth0')">Log in</a>
+                <a @click="$auth.loginWith('auth0')">LOG IN</a>
               </div>
             </div>
         </div>
