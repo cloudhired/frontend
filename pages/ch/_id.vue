@@ -184,6 +184,11 @@
               </ul>
             </div>
           </div>
+          <div class="profile t">
+            <p>
+              This is all your work!!! So list them here
+            </p>
+          </div>
         </div><div class="container profile block">
           <div class="profile t">
             <div style="flex:1">
@@ -391,13 +396,9 @@ export default {
   grid-auto-columns: var(--square-size);
 }
 
-
-/* Other styling */
-
 .graph {
-  // padding: .5rem;
-  // border: 1px #e1e4e8 solid;
-  // margin: .5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px #e1e4e8 solid;
 }
 
 // .days li:nth-child(odd) {
