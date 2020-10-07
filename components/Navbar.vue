@@ -3,7 +3,8 @@
       <nav class="navbar py-4" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item start" to="/">
-                <img src="../static/cloudhired_logo.png" width="112" height="28">
+              <span class="logo px-3">CH</span>
+                <!-- <img src="../static/cloudhired_logo.png" width="112" height="28"> -->
             </nuxt-link>
             <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
                 <span aria-hidden="true"></span>
@@ -69,3 +70,16 @@ export default {
   // }
 }
 </script>
+
+<style lang="scss">
+
+.logo {
+  color:white;
+  font-size:2.5rem; 
+  background-color: $primary;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+
+</style>
