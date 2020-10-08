@@ -2,7 +2,7 @@
   <section class="section profile">
     <div class="columns profile">
       <div class="column is-two-thirds pl-0">
-        <div class="container profile left">
+        <div class="container profile">
           <div class="profile basic left">
             <div class="container">
               <figure class="image is-128x128">
@@ -185,9 +185,55 @@
             </div>
           </div>
           <div class="profile t">
-            <p>
-              This is all your work!!! So list them here
-            </p>
+            <table class="table cert">
+              <tbody>
+                <tr>
+                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
+                  <td>
+                    <div class="content">
+                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
+                      one of us.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
+                  <td>
+                    <div class="content">
+                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
+                      one of us.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
+                  <td>
+                    <div class="content">
+                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
+                      one of us.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
+                  <td>
+                    <div class="content">
+                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
+                      one of us.
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
+                  <td>
+                    <div class="content">
+                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
+                      one of us.
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div><div class="container profile block">
           <div class="profile t">
@@ -199,22 +245,127 @@
             </div>
           </div>
           <div class="profile t">
-            <p> Check what I have done so far. </p>
-            <p> and also my GitHub activity. </p>
+            <table class="table cert">
+              <tbody>
+                <tr>
+                  <td class="pl-0">M220JS: MongoDB for Javascript Developers</td>
+                </tr>
+                <tr>
+                  <td class="pl-0">M001: MongoDB Basics</td>
+                </tr>
+                <tr>
+                  <td class="pl-0">M121: The MongoDB Aggregation Framework</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
       <div class="column is-one-third pr-0">
-        <div class="container profile">
-          <span> holder for future use: probably job recommendations </span>
+        <div class="container profile block">
+          <div class="profile t">
+            <table class="table cert">
+                <tbody>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> John Portland </p>
+                      <p style="font-size:.7rem"> Software Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Ravi Kumar </p>
+                      <p style="font-size:.7rem"> Full Stack Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Anthony Dinozzo  </p>
+                      <p style="font-size:.7rem"> Front End Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+              </table>
+          </div>
         </div>
-        <div class="container profile">
-          <p> Maybe three sections: recommended by page owner; recommended by system; and recommended jobs </p>
+                <div class="container profile block">
+          <div class="profile t">
+            <table class="table cert">
+              <tbody>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> John Portland </p>
+                      <p style="font-size:.7rem"> Software Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Ravi Kumar </p>
+                      <p style="font-size:.7rem"> Full Stack Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Anthony Dinozzo  </p>
+                      <p style="font-size:.7rem"> Front End Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
-        <div class="container profile">
-          <p> The first section is a very exciting feature because the page owner actually has control of the things displayed on their
-            page. They can recommend their mentorees and maybe <strong> the jobs </strong> from their company. (they will have to list first)
-            and the rest of it is just site wide recommendations </p>
+        <div class="container profile block">
+          <div class="profile t">
+            <table class="table cert">
+              <tbody>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> John Portland </p>
+                      <p style="font-size:.7rem"> Software Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Ravi Kumar </p>
+                      <p style="font-size:.7rem"> Full Stack Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="pl-0"><figure class="image is-48x48"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
+                  <td>
+                    <div>
+                      <p> Anthony Dinozzo  </p>
+                      <p style="font-size:.7rem"> Front End Engineer </p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
