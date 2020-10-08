@@ -66,7 +66,9 @@ export default {
     redirect: {
       login: '/', // redirect user when not connected
       callback: '/auth/signed-in',
+      home: '/'
     },
+    rewriteRedirects: true, 
     strategies: {
       local: false,
       auth0: {

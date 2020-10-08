@@ -55,6 +55,10 @@
 
 <script>
 export default {
+  fetch ({ store }) {
+    console.dir(store)
+  }, 
+
   data() {
     return {
       isDropped: false
@@ -68,8 +72,11 @@ export default {
   },
   methods: {
     login () {
-      localStorage.setItem('redirect', this.$route.path)
-      alert(localStorage.getItem('redirect'))
+      console.log("login")
+      // console.dir(this.$store.state)
+      // this.$store.commit('increment', 1)
+      // console.dir(this.$store.state)
+      this.$auth.loginWith('auth0')
     },
     toggleClass: function (event) {
       alert(JSON.stringify(this.$auth.user))

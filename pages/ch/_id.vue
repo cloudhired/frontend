@@ -377,7 +377,7 @@ import Logo from '~/components/Logo.vue'
 
 export default {
   layout: 'index',
-  auth: false,
+  auth: true,
   components: {
     Logo
   },
