@@ -6,12 +6,12 @@
           <div class="profile basic left">
             <div class="container">
               <figure class="image is-128x128">
-                <img class="is-rounded" :src="user.picture"/>
+                <img class="is-rounded" src="../../static/mg_profile.jpg"/>
               </figure> 
             </div>
             <div class="container">
               <ul class="profile mt-1">
-                <li> {{ user.name }} </li>
+                <li> Mengen Gao </li>
                 <li> Software Engineer </li>
               </ul>
             </div>
