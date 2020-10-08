@@ -11,7 +11,7 @@
             </div>
             <div class="container">
               <ul class="profile mt-1">
-                <li> Mengen Gao </li>
+                <li> {{ this.$route.params.id }} </li>
                 <li> Software Engineer </li>
               </ul>
             </div>
@@ -386,7 +386,7 @@ export default {
   // },
   head() {
     return {
-      title: this.user.name,
+      title: this.$route.params.id,
         meta: [
           {
             hid: 'description',
@@ -396,7 +396,7 @@ export default {
         ]
     }
   }, 
-  middleware: 'auth',
+  // middleware: 'auth',
   computed: {
       user() {
         return this.$auth.user
