@@ -377,6 +377,7 @@ import Logo from '~/components/Logo.vue'
 
 export default {
   layout: 'index',
+  auth: false,
   components: {
     Logo
   },
@@ -396,7 +397,6 @@ export default {
         ]
     }
   }, 
-  // middleware: 'auth',
   computed: {
       user() {
         return this.$auth.user

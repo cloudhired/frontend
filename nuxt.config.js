@@ -52,12 +52,9 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/bulma',
-    // axios is required by @nuxtjs/auth
-    '@nuxtjs/axios',
-    // https://auth.nuxtjs.org
-    '@nuxtjs/auth',
+    '@nuxtjs/bulma',        // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
+    '@nuxtjs/axios',        // axios is required by @nuxtjs/auth
+    '@nuxtjs/auth',         // https://auth.nuxtjs.org
     '@nuxt/http',
   ],
 
@@ -68,7 +65,7 @@ export default {
   auth: {
     redirect: {
       login: '/', // redirect user when not connected
-      callback: '/auth/signed-in'
+      callback: '/auth/signed-in',
     },
     strategies: {
       local: false,
@@ -77,6 +74,10 @@ export default {
         client_id: process.env.AUTH0_CLIENT_ID
       }
     }
+  },
+
+  router: {
+    middleware: ['auth']
   },
   /*
   ** Build configuration

@@ -42,8 +42,11 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a @click="$auth.loginWith('auth0')">LOG IN</a>
+                <a @click="login()">LOG IN test</a>
               </div>
+              <!-- <div class="navbar-item" v-else>
+                <a @click="$auth.loginWith('auth0')">LOG IN</a>
+              </div> -->
             </div>
         </div>
       </nav>
@@ -63,11 +66,15 @@ export default {
       return this.$auth.user
     }
   },
-  // methods: {
-  //   toggleClass: function (event) {
-  //     alert(JSON.stringify(this.$auth.user))
-  //   }
-  // }
+  methods: {
+    login () {
+      localStorage.setItem('redirect', this.$route.path)
+      alert(localStorage.getItem('redirect'))
+    },
+    toggleClass: function (event) {
+      alert(JSON.stringify(this.$auth.user))
+    }
+  }, 
 }
 </script>
 
