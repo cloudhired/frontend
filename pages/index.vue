@@ -71,9 +71,14 @@ export default {
     Logo
   },
   // TODO: when nav back to index, there occurs network error and couldn't render the page. I suspect it is because of this function. 
-  async asyncData({ $axios }) {
-    const users = await $axios.$get('/api/users')
-    return { users }
+  data() {
+    return {
+      users: []
+    }
+  }, 
+  async fetch () {
+    this.users = await this.$http.$get('/api/users')
+      .then(users => users)
   },
   head() {
     return {

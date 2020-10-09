@@ -42,7 +42,7 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a @click="login()">LOG IN test</a>
+                <a @click="login()">LOG IN</a>
               </div>
               <!-- <div class="navbar-item" v-else>
                 <a @click="$auth.loginWith('auth0')">LOG IN</a>
@@ -73,7 +73,7 @@ export default {
   methods: {
     login () {
       console.log("login")
-      // console.dir(this.$store.state)
+      console.dir(this.$store.$auth)
       // this.$store.commit('increment', 1)
       // console.dir(this.$store.state)
       this.$auth.loginWith('auth0')
