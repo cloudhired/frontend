@@ -11,20 +11,20 @@
             </div>
             <div class="container">
               <ul class="profile mt-1">
-                <li> {{ this.$route.params.id }} </li>
-                <li> Software Engineer </li>
+                <li> {{ userInfo.fullname }} </li>
+                <li> {{ userInfo.title}} </li>
               </ul>
             </div>
           </div>
           <div class="profile basic right">
             <ul class="profile-b">
               <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span> {{ userInfo.current_loc }} </span></li>
-              <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span>Humana Inc.</span></li>
-              <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span>5 years of experience</span></li>
-              <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a href="https://gaomengen.com"> https://gaomengen.com </a></span></li>
+              <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span> {{ userInfo.company }} </span></li>
+              <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span> {{ userInfo.yoe }} years of experience</span></li>
+              <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a :href="userInfo.personal_site"> {{ userInfo.personal_site }} </a></span></li>
               <li class="social"> 
-                <a href=""><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
-                <a href=""><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
+                <a :href="'https://linkedin.com/in/' + userInfo.linkedin_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
+                <a :href="'https://github.com/' + userInfo.github_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
                 <a href=""><span class="icon mx-1"><fa icon="envelope-square"/></span></a>
               </li>
             </ul>
@@ -40,7 +40,7 @@
             </div>
           </div>
           <div class="profile t">
-            <p> Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. Hi my name is Morgan Gao and I am a software engineer. </p>
+            {{ userInfo.intro }}
           </div>
         </div>
         <div class="container profile block">
@@ -54,6 +54,11 @@
           </div>
           
           <div class="field is-grouped is-grouped-multiline mx-4 my-4">
+            <div class="control">
+                <div class="tags has-addons">
+                <a class="tag is-link"> {{ userInfo.skills[0] }} </a>
+              </div>
+            </div>
             <div class="control">
               <div class="tags has-addons">
                 <a class="tag is-link">Technology</a>
