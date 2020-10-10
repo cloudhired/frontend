@@ -54,69 +54,10 @@
           </div>
           
           <div class="field is-grouped is-grouped-multiline mx-4 my-4">
-            <div class="control">
+            <div class="control" v-for="skill in userInfo.skills" v-bind:key="skill">
                 <div class="tags has-addons">
-                <a class="tag is-link"> {{ userInfo.skills[0] }} </a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Technology</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Cloud Computing</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">GCP</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Python</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Node.js</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Nuxt.js</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Linux</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Eating</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Drinking</a>
-                <a class="tag is-delete"></a>
-              </div>
-            </div>
-            <div class="control">
-              <div class="tags has-addons">
-                <a class="tag is-link">Couching</a>
-                <a class="tag is-delete"></a>
+                <a class="tag is-link"> {{ skill }} </a>
+                <!-- <a class="tag is-delete"></a> -->
               </div>
             </div>
           </div>
