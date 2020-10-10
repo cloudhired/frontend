@@ -15,14 +15,4 @@ router.get('/users', async function (req, res, next) {
   res.send(await pros.find({}).toArray())
 })
 
-/* GET user by ID. */
-router.get('/users/:id', function (req, res, next) {
-  const id = parseInt(req.params.id)
-  if (id >= 0 && id < users.length) {
-    res.json(users[id])
-  } else {
-    res.sendStatus(404)
-  }
-})
-
 export default router

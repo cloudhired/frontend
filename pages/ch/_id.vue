@@ -18,7 +18,7 @@
           </div>
           <div class="profile basic right">
             <ul class="profile-b">
-              <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span>Louisville, KY, USA</span></li>
+              <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span> {{ userInfo.current_loc }} </span></li>
               <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span>Humana Inc.</span></li>
               <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span>5 years of experience</span></li>
               <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a href="https://gaomengen.com"> https://gaomengen.com </a></span></li>
@@ -377,14 +377,19 @@ import Logo from '~/components/Logo.vue'
 
 export default {
   layout: 'index',
-  auth: true,
+  auth: false,
   components: {
     Logo
   },
-  // async asyncData({ $axios }) {
-  //   const ip = await $axios.$get('/api/users')
-  //   return { ip }
-  // },
+  data() {
+    return {
+      userInfo: []
+    }
+  }, 
+  async fetch () {
+    this.userInfo = await this.$http.$get(`/api/user/${this.$route.params.id}`)
+      .then(userInfo => userInfo)
+  },
   head() {
     return {
       title: this.$route.params.id,

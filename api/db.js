@@ -1,4 +1,4 @@
-const MongoClient = require('mongodb').MongoClient;
+import { MongoClient } from "mongodb"
 const client = new MongoClient(process.env.MONGO_CONN_STR, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect()
 

@@ -1,22 +1,32 @@
 import express from 'express'
-// Create express instance
+import { MongoClient } from "mongodb"
+import UsersDAO from "./dao/userDAO"
 const app = express()
 
 // Require API routes
 import users from './routes/users'
-// const test = require('./routes/test')
+import user from './routes/user'
 
 // Import API Routes
 app.use(users)
-// app.use(test)
+app.use(user)
 
-// Export express app
 export default app
 
-// Start standalone server if directly running
-if (require.main === module) {
-  const port = process.env.PORT || 3000
-  app.listen(port, () => {
-    console.log(`API server listening on port ${port}`)
+MongoClient.connect(
+  process.env.MONGO_CONN_STR,
+  { useNewUrlParser: true, poolSize: 50, wtimeout: 2500, useUnifiedTopology: true },
+)
+  .catch(err => {
+    console.error(err.stack)
+    process.exit(1)
   })
-}
+  .then(async client => {
+    await UsersDAO.injectDB(client)
+    if (require.main === module) {
+      const port = process.env.PORT || 3000
+      app.listen(port, () => {
+        console.log(`API server listening on port ${port}`)
+      })
+    }
+  })

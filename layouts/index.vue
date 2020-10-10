@@ -1,7 +1,7 @@
 <template>
   <div class="main-layout">
     <navbar/>
-    <nuxt/>
+    <nuxt keep-alive />
     <main-footer/>
   </div>
 </template>
