@@ -19,9 +19,7 @@
                 </div>
               </div>
               <div class="profile basic right" style="margin:0;align-self: stretch;">
-                <div style="text-align:right; min-height:2rem">
-                  <a v-show="isPageOwner()" v-on:click="alert('hih')"><span class="icon mx-1"><fa icon="edit"/></span></a>
-                </div>
+                <ProfileEditButton editBtnId="editBasicBtn" />
                 <div class="mt-4">
                   <ul class="profile-b">
                     <li>
@@ -58,9 +56,7 @@
             <div style="flex:1">
               <strong> Introduction </strong>
             </div>
-            <div>
-              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
-            </div>
+            <ProfileEditButton editBtnId="editIntroBtn" />
           </div>
           <div class="profile t">
             {{ userInfo.intro }}
@@ -71,9 +67,7 @@
             <div style="flex:1">
               <strong> Skills </strong>
             </div>
-            <div >
-              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
-            </div>
+            <ProfileEditButton editBtnId="editSkillsBtn" />
           </div>
           
           <div class="field is-grouped is-grouped-multiline mx-4 my-4">
@@ -90,9 +84,7 @@
             <div style="flex:1">
               <strong> Certifications </strong>
             </div>
-            <div >
-              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
-            </div>
+            <ProfileEditButton editBtnId="editCertsBtn" />
           </div>
           <div class="profile t">
             <table class="table cert">
@@ -110,9 +102,7 @@
             <div style="flex:1">
               <strong> Portfolios </strong>
             </div>
-            <div >
-              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
-            </div>
+            <ProfileEditButton editBtnId="editPtfBtn" />
           </div>
           <div class="profile t mt-0">
             <div class="graph">
@@ -164,9 +154,7 @@
             <div style="flex:1">
               <strong> Courses </strong>
             </div>
-            <div >
-              <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
-            </div>
+            <ProfileEditButton editBtnId="editCoursesBtn" />
           </div>
           <div class="profile t">
             <table class="table cert">
@@ -333,7 +321,7 @@ export default {
     })
   }, 
   methods: {
-    isPageOwner () {
+    isPageOwner: function () {
       if (this.$auth.loggedIn) {
         if (this.$auth.user.email === this.userInfo.email) {
           return true
@@ -347,7 +335,13 @@ export default {
     alert (msg) {
       alert(msg)
     }
-  }
+  },
+  provide: function() {
+          return {
+            isPageOwner: this.isPageOwner, 
+            alert: this.alert
+          };
+        }
 
 }
 </script>
