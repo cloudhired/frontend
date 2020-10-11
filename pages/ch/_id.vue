@@ -74,17 +74,9 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr>
+                <tr v-for="cert in userInfo.certs" v-bind:key="cert">
                   <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
-                  <td>Google Cloud Professional Architect</td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
-                  <td>Google Cloud Professional Developer</td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
-                  <td>Google Cloud Professional Data Engineer</td>
+                  <td> {{ cert.cert_name}} </td>
                 </tr>
               </tbody>
             </table>
@@ -133,48 +125,11 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr>
+                <tr v-for="ptf in userInfo.portfolios" v-bind:key="ptf">
                   <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
                   <td>
                     <div class="content">
-                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
-                      one of us.
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
-                  <td>
-                    <div class="content">
-                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
-                      one of us.
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
-                  <td>
-                    <div class="content">
-                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
-                      one of us.
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
-                  <td>
-                    <div class="content">
-                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
-                      one of us.
-                    </div>
-                  </td>
-                </tr>
-                <tr>
-                  <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
-                  <td>
-                    <div class="content">
-                      This is my work. You may think this is stupid but it actually quite popular among the stupid people. So if you think this is not funny, then you are not 
-                      one of us.
+                      {{ ptf.description }}
                     </div>
                   </td>
                 </tr>
@@ -193,14 +148,8 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr>
-                  <td class="pl-0">M220JS: MongoDB for Javascript Developers</td>
-                </tr>
-                <tr>
-                  <td class="pl-0">M001: MongoDB Basics</td>
-                </tr>
-                <tr>
-                  <td class="pl-0">M121: The MongoDB Aggregation Framework</td>
+                <tr v-for="course in userInfo.courses" v-bind:key="course">
+                  <td class="pl-0"> {{ course.name }} </td>
                 </tr>
               </tbody>
             </table>
