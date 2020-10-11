@@ -55,6 +55,7 @@
 
 <script>
 export default {
+  auth: false, 
   fetch ({ store }) {
     console.dir(store)
   }, 
@@ -64,7 +65,6 @@ export default {
       isDropped: false
     }
   },
-  middleware: 'auth',
   computed: {
     user() {
       return this.$auth.user

@@ -7,30 +7,46 @@
               <div class="profile basic left">
                 <div class="container">
                   <figure class="image is-128x128">
+                    <!-- For now, use static URI. In the future, first check saved picture, then check user.picture -->
                     <img class="is-rounded" src="../../static/mg_profile.jpg"/>
                   </figure> 
                 </div>
                 <div class="container">
                   <ul class="profile mt-1">
-                    <li> {{ userInfo.fullname }} </li>
-                    <li> {{ userInfo.title}} </li>
+                    <li v-if="userInfo.fullname"> {{ userInfo.fullname }} </li>
+                    <li v-show="userInfo.title"> {{ userInfo.title }} </li>
                   </ul>
                 </div>
               </div>
               <div class="profile basic right" style="margin:0;align-self: stretch;">
-                <div style="text-align:right">
-                  <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
+                <div style="text-align:right; min-height:2rem">
+                  <a v-show="isPageOwner()" v-on:click="alert('hih')"><span class="icon mx-1"><fa icon="edit"/></span></a>
                 </div>
                 <div class="mt-4">
                   <ul class="profile-b">
-                    <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span v-if="userInfo.current_loc"> {{ userInfo.current_loc }} </span> <span v-else> Add your location</span></li>
-                    <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span> {{ userInfo.company }} </span></li>
-                    <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span> {{ userInfo.yoe }} years of experience</span></li>
-                    <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a :href="userInfo.personal_site"> {{ userInfo.personal_site }} </a></span></li>
+                    <li>
+                      <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> 
+                      <span v-if="userInfo.current_loc"> {{ userInfo.current_loc }} </span> 
+                      <span v-else> No location added </span></li>
+                    <li>
+                      <span class="icon"><fa :icon="['fa', 'briefcase']"/></span> 
+                      <span v-if="userInfo.company"> {{ userInfo.company }} </span>
+                      <span v-else> No company added </span></li>
+                    <li>
+                      <span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> 
+                      <span v-if="userInfo.yoe"> {{ userInfo.yoe }} years of experience</span>
+                      <span v-else> Haven't added </span></li>
+                    <li>
+                      <span class="icon"><fa :icon="['fa', 'blog']"/></span> 
+                      <span v-if="userInfo.personal_site"><a :href="userInfo.personal_site"> {{ userInfo.personal_site }} </a></span>
+                      <span v-else> No personal site added </span></li>
                     <li class="social"> 
-                      <a :href="'https://linkedin.com/in/' + userInfo.linkedin_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
-                      <a :href="'https://github.com/' + userInfo.github_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
-                      <a href=""><span class="icon mx-1"><fa icon="envelope-square"/></span></a>
+                      <a v-if="userInfo.linkedin_handle" :href="'https://linkedin.com/in/' + userInfo.linkedin_handle" target="_blank">
+                        <span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
+                      <a v-if="userInfo.github_handle" :href="userInfo.github_handle ? 'https://github.com/' + userInfo.github_handle: ''" target="_blank">
+                        <span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
+                      <a v-if="userInfo.email" :href="'mailto:' + userInfo.email">
+                        <span class="icon mx-1"><fa icon="envelope-square"/></span></a>
                     </li>
                   </ul>
                 </div>
@@ -81,9 +97,9 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr v-for="cert in userInfo.certs" v-bind:key="cert">
+                <tr v-for="cert in userInfo.certs" v-bind:key="cert.id">
                   <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
-                  <td> {{ cert.cert_name}} </td>
+                  <td> {{ cert.cert_name }} </td>
                 </tr>
               </tbody>
             </table>
@@ -132,7 +148,7 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr v-for="ptf in userInfo.portfolios" v-bind:key="ptf">
+                <tr v-for="ptf in userInfo.portfolios" v-bind:key="ptf.id">
                   <td class="pl-0"><figure class="image is-is-16by9" style="width:128px"><img src="https://bulma.io/images/placeholders/640x360.png"></figure></td>
                   <td>
                     <div class="content">
@@ -155,7 +171,7 @@
           <div class="profile t">
             <table class="table cert">
               <tbody>
-                <tr v-for="course in userInfo.courses" v-bind:key="course">
+                <tr v-for="course in userInfo.courses" v-bind:key="course.id">
                   <td class="pl-0"> {{ course.name }} </td>
                 </tr>
               </tbody>
@@ -285,7 +301,7 @@ export default {
   },
   data() {
     return {
-      userInfo: []
+      userInfo: [], 
     }
   }, 
   async fetch () {
@@ -320,7 +336,24 @@ export default {
         // squares.insertAdjacentHTML('beforeend', `<li data-level="${level}"></li>`);
       }
     })
+  }, 
+  methods: {
+    isPageOwner () {
+      if (this.$auth.loggedIn) {
+        if (this.$auth.user.email === this.userInfo.email) {
+          return true
+        } else {
+          return false
+        }
+      } else {
+        return false
+      }
+    },
+    alert (msg) {
+      alert(msg)
+    }
   }
+
 }
 </script>
 
