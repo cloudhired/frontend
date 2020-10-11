@@ -4,7 +4,6 @@
       <div class="column is-two-thirds pl-0">
         <div class="container profile block">
           <div class="profile t " style="align-items:center; height:auto">
-            <!-- <div class="container profile"> -->
               <div class="profile basic left">
                 <div class="container">
                   <figure class="image is-128x128">
@@ -36,7 +35,6 @@
                   </ul>
                 </div>
               </div>
-            <!-- </div> -->
           </div>
         </div>
         <div class="container profile block">
@@ -44,7 +42,7 @@
             <div style="flex:1">
               <strong> Introduction </strong>
             </div>
-            <div >
+            <div>
               <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
             </div>
           </div>
