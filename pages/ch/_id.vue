@@ -2,32 +2,41 @@
   <section class="section profile">
     <div class="columns profile">
       <div class="column is-two-thirds pl-0">
-        <div class="container profile">
-          <div class="profile basic left">
-            <div class="container">
-              <figure class="image is-128x128">
-                <img class="is-rounded" src="../../static/mg_profile.jpg"/>
-              </figure> 
-            </div>
-            <div class="container">
-              <ul class="profile mt-1">
-                <li> {{ userInfo.fullname }} </li>
-                <li> {{ userInfo.title}} </li>
-              </ul>
-            </div>
-          </div>
-          <div class="profile basic right">
-            <ul class="profile-b">
-              <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span> {{ userInfo.current_loc }} </span></li>
-              <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span> {{ userInfo.company }} </span></li>
-              <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span> {{ userInfo.yoe }} years of experience</span></li>
-              <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a :href="userInfo.personal_site"> {{ userInfo.personal_site }} </a></span></li>
-              <li class="social"> 
-                <a :href="'https://linkedin.com/in/' + userInfo.linkedin_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
-                <a :href="'https://github.com/' + userInfo.github_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
-                <a href=""><span class="icon mx-1"><fa icon="envelope-square"/></span></a>
-              </li>
-            </ul>
+        <div class="container profile block">
+          <div class="profile t " style="align-items:center; height:auto">
+            <!-- <div class="container profile"> -->
+              <div class="profile basic left">
+                <div class="container">
+                  <figure class="image is-128x128">
+                    <img class="is-rounded" src="../../static/mg_profile.jpg"/>
+                  </figure> 
+                </div>
+                <div class="container">
+                  <ul class="profile mt-1">
+                    <li> {{ userInfo.fullname }} </li>
+                    <li> {{ userInfo.title}} </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="profile basic right" style="margin:0;align-self: stretch;">
+                <div style="text-align:right">
+                  <a href=""><span class="icon mx-1"><fa icon="edit"/></span></a>
+                </div>
+                <div class="mt-4">
+                  <ul class="profile-b">
+                    <li><span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> <span v-if="userInfo.current_loc"> {{ userInfo.current_loc }} </span> <span v-else> Add your location</span></li>
+                    <li><span class="icon"><fa :icon="['fa', 'briefcase']"/></span> <span> {{ userInfo.company }} </span></li>
+                    <li><span class="icon"><fa :icon="['fa', 'dumbbell']"/></span> <span> {{ userInfo.yoe }} years of experience</span></li>
+                    <li><span class="icon"><fa :icon="['fa', 'blog']"/></span> <span><a :href="userInfo.personal_site"> {{ userInfo.personal_site }} </a></span></li>
+                    <li class="social"> 
+                      <a :href="'https://linkedin.com/in/' + userInfo.linkedin_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'linkedin']"/></span></a>
+                      <a :href="'https://github.com/' + userInfo.github_handle" target="_blank"><span class="icon mx-1"><fa :icon="['fab', 'github-square']"/></span></a>
+                      <a href=""><span class="icon mx-1"><fa icon="envelope-square"/></span></a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            <!-- </div> -->
           </div>
         </div>
         <div class="container profile block">
@@ -287,7 +296,7 @@ export default {
   },
   head() {
     return {
-      title: this.$route.params.id,
+      title: this.userInfo.fullname + " | CloudHired",
         meta: [
           {
             hid: 'description',
