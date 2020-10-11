@@ -1,5 +1,6 @@
 
 export default {
+  components: true,
   /*
   ** Headers of the page
   */

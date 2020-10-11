@@ -63,13 +63,8 @@
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
-
 export default {
   layout: 'index',
-  components: {
-    Logo
-  },
   // TODO: when nav back to index, there occurs network error and couldn't render the page. I suspect it is because of this function. 
   data() {
     return {
