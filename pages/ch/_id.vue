@@ -21,6 +21,13 @@
               <div class="profile basic right" style="margin:0;align-self: stretch;">
                 <ProfileEditButton editBtnId="editBasicBtn" />
                 <div class="mt-4">
+                  <div class="modal">
+                    <div class="modal-background"></div>
+                    <div class="modal-content">
+                      You shit is here
+                    </div>
+                    <button class="modal-close is-large" aria-label="close"></button>
+                  </div>
                   <ul class="profile-b">
                     <li>
                       <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> 
