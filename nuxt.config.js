@@ -57,10 +57,24 @@ export default {
     '@nuxtjs/axios',        // axios is required by @nuxtjs/auth
     '@nuxtjs/auth',         // https://auth.nuxtjs.org
     '@nuxt/http',
+    '@nuxtjs/proxy',        // allow CORS
   ],
 
   serverMiddleware: {
     '/api': '~/api'
+  },
+
+  http: {
+    proxy: true 
+  },
+
+  proxy: {
+    '/api': {
+      target: 'https://cloudhired.com',
+      pathRewrite: {
+        '^/api' : '/'
+        }
+      }
   },
 
   auth: {

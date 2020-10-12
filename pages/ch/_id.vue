@@ -1,5 +1,6 @@
 <template>
-  <section class="section profile">
+  <section v-if="$fetchState.pending">Fetching user information for #{{$route.params.id}}...</section>
+  <section v-else class="section profile">
     <div class="columns profile">
       <div class="column is-two-thirds pl-0">
         <div class="container profile block">
@@ -68,6 +69,7 @@
           <div class="profile t">
             <div style="flex:1">
               <strong> Skills </strong>
+              <button @click="$fetch">Refresh</button>
             </div>
             <ProfileEditButton editBtnId="editSkillsBtn" />
             <ProfileEditModalSkills editModalId="editSkillsModal" v-bind:isEditSkillsBtn="isEditSkillsBtn" />
@@ -300,8 +302,9 @@ export default {
     }
   }, 
   async fetch () {
+    // TODO: I believe I shouldn't have to add domain name in prod. Need more research. 
     this.userInfo = await this.$http.$get(`/api/user/${this.$route.params.id}`)
-      .then(userInfo => userInfo)
+      // .then(userInfo => userInfo)
   },
   head() {
     return {
@@ -394,8 +397,6 @@ export default {
 </script>
 
 <style lang="scss">
-
-// @import '~assets/scss/main.scss';
 
 .section.profile {
     display: flex;

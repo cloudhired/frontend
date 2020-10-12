@@ -22,6 +22,7 @@ handlers:
 
 env_variables:
   HOST: 0.0.0.0
+  NODE_ENV: production
 
 automatic_scaling:
   target_cpu_utilization: 0.65

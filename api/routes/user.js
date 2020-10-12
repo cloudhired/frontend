@@ -14,6 +14,8 @@ const users = [
 router.get('/user/:id', async function (req, res, next) {
   console.log(req.params.id)
   const userInfo = await UsersDAO.getUser(req.params.id)
+  // testing port
+  userInfo['port'] = process.env.PORT || "nothing"
   console.dir(userInfo)
   // const pros = await db.getCollection('professionals', 'professional_profiles');
   res.send(userInfo)

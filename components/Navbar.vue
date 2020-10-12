@@ -35,6 +35,7 @@
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
                       <nuxt-link :to="{ name: 'ch-id', params: { id: user.nickname }}" class="dropdown-item">Edit Profile</nuxt-link>
+                      <!-- <a href="/ch/gaomengen">Edit Profileee </a> -->
                       <hr class="dropdown-divider">
                       <a class="dropdown-item" @click="$auth.logout()"> Log Out </a>
                     </div>
