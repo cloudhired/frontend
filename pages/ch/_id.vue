@@ -20,7 +20,7 @@
               </div>
               <div class="profile basic right" style="margin:0;align-self: stretch;">
                 <ProfileEditButton editBtnId="editBasicBtn" />
-                <ProfileEditModal editModalId="editBasicModal" v-bind:isEditBasicBtn="isEditBasicBtn" />
+                <ProfileEditModalBasic editModalId="editBasicModal" v-bind:isEditBasicBtn="isEditBasicBtn" />
                 <div class="mt-4">
                   <ul class="profile-b">
                     <li>
@@ -58,6 +58,7 @@
               <strong> Introduction </strong>
             </div>
             <ProfileEditButton editBtnId="editIntroBtn" />
+            <ProfileEditModalIntro editModalId="editIntroModal" v-bind:isEditIntroBtn="isEditIntroBtn" />
           </div>
           <div class="profile t">
             {{ userInfo.intro }}
@@ -287,6 +288,7 @@ export default {
     return {
       userInfo: [],
       isEditBasicBtn: false,
+      isEditIntroBtn: false,
     }
   }, 
   async fetch () {
@@ -342,6 +344,12 @@ export default {
         // TODO: need to remind user of unsaved editing
         this.isEditBasicBtn = !this.isEditBasicBtn
         break;
+
+        case "editIntroBtn": this.isEditIntroBtn = !this.isEditIntroBtn
+        break;
+        case "editIntroModal": this.isEditIntroBtn = !this.isEditIntroBtn
+        break;
+
         default: alert(editBtn)
       }
       
