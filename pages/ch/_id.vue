@@ -70,6 +70,7 @@
               <strong> Skills </strong>
             </div>
             <ProfileEditButton editBtnId="editSkillsBtn" />
+            <ProfileEditModalSkills editModalId="editSkillsModal" v-bind:isEditSkillsBtn="isEditSkillsBtn" />
           </div>
           
           <div class="field is-grouped is-grouped-multiline mx-4 my-4">
@@ -87,6 +88,7 @@
               <strong> Certifications </strong>
             </div>
             <ProfileEditButton editBtnId="editCertsBtn" />
+            <ProfileEditModalCerts editModalId="editCertsModal" v-bind:isEditCertsBtn="isEditCertsBtn" />
           </div>
           <div class="profile t">
             <table class="table cert">
@@ -104,7 +106,8 @@
             <div style="flex:1">
               <strong> Portfolios </strong>
             </div>
-            <ProfileEditButton editBtnId="editPtfBtn" />
+            <ProfileEditButton editBtnId="editPtflBtn" />
+            <ProfileEditModalPtfl editModalId="editPtflModal" v-bind:isEditPtflBtn="isEditPtflBtn" />
           </div>
           <div class="profile t mt-0">
             <div class="graph">
@@ -157,6 +160,7 @@
               <strong> Courses </strong>
             </div>
             <ProfileEditButton editBtnId="editCoursesBtn" />
+            <ProfileEditModalCourses editModalId="editCoursesModal" v-bind:isEditCoursesBtn="isEditCoursesBtn" />
           </div>
           <div class="profile t">
             <table class="table cert">
@@ -289,6 +293,10 @@ export default {
       userInfo: [],
       isEditBasicBtn: false,
       isEditIntroBtn: false,
+      isEditSkillsBtn: false,
+      isEditCertsBtn: false,
+      isEditPtflBtn: false,
+      isEditCoursesBtn: false,
     }
   }, 
   async fetch () {
@@ -348,6 +356,26 @@ export default {
         case "editIntroBtn": this.isEditIntroBtn = !this.isEditIntroBtn
         break;
         case "editIntroModal": this.isEditIntroBtn = !this.isEditIntroBtn
+        break;
+
+        case "editSkillsBtn": this.isEditSkillsBtn = !this.isEditSkillsBtn
+        break;
+        case "editSkillsModal": this.isEditSkillsBtn = !this.isEditSkillsBtn
+        break;
+
+        case "editCertsBtn": this.isEditCertsBtn = !this.isEditCertsBtn
+        break;
+        case "editCertsModal": this.isEditCertsBtn = !this.isEditCertsBtn
+        break;
+
+        case "editPtflBtn": this.isEditPtflBtn = !this.isEditPtflBtn
+        break;
+        case "editPtflModal": this.isEditPtflBtn = !this.isEditPtflBtn
+        break;
+
+        case "editCoursesBtn": this.isEditCoursesBtn = !this.isEditCoursesBtn
+        break;
+        case "editCoursesModal": this.isEditCoursesBtn = !this.isEditCoursesBtn
         break;
 
         default: alert(editBtn)
