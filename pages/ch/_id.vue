@@ -20,14 +20,8 @@
               </div>
               <div class="profile basic right" style="margin:0;align-self: stretch;">
                 <ProfileEditButton editBtnId="editBasicBtn" />
+                <ProfileEditModal editModalId="editBasicModal" v-bind:isEditBasicBtn="isEditBasicBtn" />
                 <div class="mt-4">
-                  <div class="modal">
-                    <div class="modal-background"></div>
-                    <div class="modal-content">
-                      You shit is here
-                    </div>
-                    <button class="modal-close is-large" aria-label="close"></button>
-                  </div>
                   <ul class="profile-b">
                     <li>
                       <span class="icon"><fa :icon="['fa', 'globe-americas']"/></span> 
@@ -291,7 +285,8 @@ export default {
   auth: false,
   data() {
     return {
-      userInfo: [], 
+      userInfo: [],
+      isEditBasicBtn: false,
     }
   }, 
   async fetch () {
@@ -339,14 +334,23 @@ export default {
         return false
       }
     },
-    alert (msg) {
-      alert(msg)
+    toogleEditModal (editBtn) {
+      switch(editBtn) {
+        case "editBasicBtn": this.isEditBasicBtn = !this.isEditBasicBtn
+        break;
+        case "editBasicModal": 
+        // TODO: need to remind user of unsaved editing
+        this.isEditBasicBtn = !this.isEditBasicBtn
+        break;
+        default: alert(editBtn)
+      }
+      
     }
   },
   provide: function() {
           return {
             isPageOwner: this.isPageOwner, 
-            alert: this.alert
+            toogleEditModal: this.toogleEditModal
           };
         }
 
