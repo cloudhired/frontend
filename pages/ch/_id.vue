@@ -21,7 +21,7 @@
               </div>
               <div class="profile basic right" style="margin:0;align-self: stretch;">
                 <ProfileEditButton editBtnId="editBasicBtn" />
-                <ProfileEditModalBasic editModalId="editBasicModal" v-bind:isEditBasicBtn="isEditBasicBtn" />
+                <ProfileEditModalBasic editModalId="editBasicModal" v-bind:isEditBasicBtn="isEditBasicBtn" v-bind:userInfo="userInfo" />
                 <div class="mt-4">
                   <ul class="profile-b">
                     <li>
@@ -383,7 +383,6 @@ export default {
 
         default: alert(editBtn)
       }
-      
     }
   },
   provide: function() {
