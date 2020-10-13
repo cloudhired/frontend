@@ -15,7 +15,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.fname" autofocus>
+                  <input v-model="fname" class="input is-static" type="text" :placeholder="userInfo.fname" autofocus>
                 </p>
               </div>
             </div>
@@ -109,7 +109,7 @@ export default {
   props: ['editModalId', 'isEditBasicBtn', 'userInfo'], 
   methods: {
     sbtBasic: function () {
-      alert("func is working")
+      alert(this.fname || "user has not typed")
     }
   }
 }
