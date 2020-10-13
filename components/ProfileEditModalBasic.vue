@@ -107,6 +107,13 @@
 export default {
   inject: ["isPageOwner", "toogleEditModal"],
   props: ['editModalId', 'isEditBasicBtn', 'userInfo'], 
+
+  data() {
+    return {
+      fname: ''
+    }
+  },
+
   methods: {
     sbtBasic: function () {
       alert(this.fname || "user has not typed")
