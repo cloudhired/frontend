@@ -110,13 +110,16 @@ export default {
 
   data() {
     return {
-      fname: ''
+      fname: '', 
+      basicInfo: {}
     }
   },
 
   methods: {
-    sbtBasic: function () {
+    sbtBasic: async function () {
       alert(this.fname || "user has not typed")
+      this.basicInfo = await this.$http.$get(`/api/user/${this.$route.params.id}`)
+      alert(this.basicInfo.fullname)
     }
   }
 }
