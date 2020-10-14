@@ -118,8 +118,7 @@ export default {
   methods: {
     sbtBasic: async function () {
       alert(this.fname || "user has not typed")
-      this.basicInfo = await this.$http.$get(`/api/user/${this.$route.params.id}`)
-      alert(this.basicInfo.fullname)
+      await this.$http.$post(`/api/user/${this.$route.params.id}`, { fullname: this.fname})
     }
   }
 }
