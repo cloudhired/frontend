@@ -14,7 +14,7 @@ router.get('/user/:id', async function (req, res, next) {
 
 // change user information 
 router.post('/user/:id', async function (req, res, next) {
-  console.log("hi+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++")
+  console.dir(req.param)
 })
 
 export default router
