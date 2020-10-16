@@ -27,7 +27,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.lname">
+                  <input v-model="lname" class="input is-static" type="text" :placeholder="userInfo.lname">
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.title">
+                  <input class="input is-static" type="text" :placeholder="userInfo.title">
                 </p>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.current_loc">
+                  <input v-model="current_loc" class="input is-static" type="text" :placeholder="userInfo.current_loc">
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.company">
+                  <input v-model="company" class="input is-static" type="text" :placeholder="userInfo.company">
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.yoe">
+                  <input v-model="yoe" class="input is-static" type="text" :placeholder="userInfo.yoe">
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :value="userInfo.personal_site">
+                  <input v-model="personal_site" class="input is-static" type="text" :placeholder="userInfo.personal_site">
                 </p>
               </div>
             </div>
@@ -111,14 +111,27 @@ export default {
   data() {
     return {
       fname: '', 
+      lname: '',
+      title: '',
+      current_loc: '',
+      company: '',
+      yoe: '',
+      personal_site: '',
       basicInfo: {}
     }
   },
 
   methods: {
     sbtBasic: async function () {
-      alert(this.fname || "user has not typed")
-      await this.$http.$post(`/api/user/${this.$route.params.id}`, { fullname: this.fname})
+      this.fname ? this.basicInfo.fname = this.fname : null;
+      this.lname ? this.basicInfo.lname = this.lname : null; 
+      this.title ? this.basicInfo.title = this.title : null;
+      this.current_loc ? this.basicInfo.current_loc = this.current_loc : null; 
+      this.company ? this.basicInfo.company = this.company : null; 
+      this.yoe ? this.basicInfo.yoe = this.yoe : null; 
+      this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
+      alert(JSON.stringify(this.basicInfo) || "user has not typed")
+      await this.$http.$post(`/api/user/${this.$route.params.id}`, this.basicInfo)
     }
   }
 }
