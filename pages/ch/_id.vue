@@ -1,5 +1,5 @@
 <template>
-  <section v-if="$fetchState.pending">Fetching user information for #{{$route.params.id}}...</section>
+  <section v-if="$fetchState.pending" class="section profile" style="height: 100vh;">Fetching information...</section>
   <section v-else class="section profile">
     <div class="columns profile">
       <div class="column is-two-thirds pl-0">
