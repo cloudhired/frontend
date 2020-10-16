@@ -1,5 +1,4 @@
 <template>
-  <!-- <section v-if="$fetchState.pending" class="section profile" style="height: 100vh;"><div style="margin-top:50%">Fetching information...</div></section> -->
   <HelperFetchingPlaceholder v-if="$fetchState.pending" msg="Fetching information..."/>
   <section v-else class="section profile">
     <div class="columns profile">

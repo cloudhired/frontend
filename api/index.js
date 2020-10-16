@@ -1,5 +1,7 @@
 import express from 'express'
 import { MongoClient } from "mongodb"
+import bodyParser from "body-parser"
+import cors from "cors"
 import UsersDAO from "./dao/userDAO"
 const app = express()
 
@@ -10,6 +12,8 @@ import user from './routes/user'
 // Import API Routes
 app.use(users)
 app.use(user)
+app.use(cors())
+app.use(bodyParser.json())
 
 export default app
 

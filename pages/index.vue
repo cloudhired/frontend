@@ -1,5 +1,6 @@
 <template>
-  <section class="section">
+  <HelperFetchingPlaceholder v-if="$fetchState.pending" msg="Loading page..."/>
+  <section v-else class="section">
     <!-- <div class="" id="level-container" v-if="$auth.loggedIn"> -->
       <nav class="level level-custom">
         <div class="level-item has-text-centered">
@@ -30,24 +31,6 @@
     <!-- </div> -->
     <div class="">
       <table class="table is-hoverable is-full">
-        <!-- <thead>
-          <tr>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Company</th>
-            <th><abbr title="Year of Experience">YOE</abbr></th>
-            <th><abbr title="Certifications Earned">Certifications</abbr></th>
-          </tr>
-        </thead> -->
-        <!-- <tfoot>
-          <tr>
-            <th>Name</th>
-            <th>Location</th>
-            <th>Company</th>
-            <th><abbr title="Year of Experience">YOE</abbr></th>
-            <th><abbr title="Certifications Earned">Certifications</abbr></th>
-          </tr>
-        </tfoot> -->
         <tbody>
           <tr style="height:6rem" v-for="user in users" :key="user.name">
             <th> {{ user.name }} </th>

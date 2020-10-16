@@ -1,6 +1,9 @@
 import { Router } from 'express'
+import bodyParser from "body-parser"
 const router = Router()
 import UsersDAO from '../dao/userDAO' 
+
+var jsonParser = bodyParser.json()
 
 // get user information
 router.get('/user/:id', async function (req, res, next) {
@@ -13,8 +16,9 @@ router.get('/user/:id', async function (req, res, next) {
 })
 
 // change user information 
-router.post('/user/:id', async function (req, res, next) {
-  console.dir(req.param)
+router.post('/user/:id', jsonParser, function (req, res) {
+  console.dir(req.body)
+  res.json({"hi":"you are n"})
 })
 
 export default router

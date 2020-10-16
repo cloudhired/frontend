@@ -20,6 +20,34 @@ export default class UsersDAO {
     return await users.findOne({ username: username })
   }
 
+  // update user information
+  static async updateUserInfo(email, info) {
+    try {  
+      preferences = preferences || {}
+
+      const updateResponse = await users.updateOne(
+        { email: email },
+        { $set:  info  },
+        { upsert: false }
+      )
+
+      if (updateResponse.matchedCount === 0) {
+        return { error: "No user found with that email" }
+      }
+      return updateResponse
+    } catch (e) {
+      console.error(
+        `An error occurred while updating this user's preferences, ${e}`,
+      )
+      return { error: e }
+    }
+  }
+
+
+
+
+  //--------------------------------- below is not used -------------------------------------
+
   /**
    * Adds a user to the `users` collection
    * @param {UserInfo} userInfo - The information of the user to add
