@@ -23,10 +23,8 @@ export default class UsersDAO {
   // update user information
   static async updateUserInfo(email, info) {
     try {  
-      preferences = preferences || {}
-
       const updateResponse = await users.updateOne(
-        { email: email },
+        { username: email },
         { $set:  info  },
         { upsert: false }
       )
