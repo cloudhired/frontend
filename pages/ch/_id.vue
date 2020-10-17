@@ -14,7 +14,7 @@
                 </div>
                 <div class="container">
                   <ul class="profile mt-1">
-                    <li v-if="userInfo.fullname"> {{ userInfo.fullname }} </li>
+                    <li v-if="userInfo.fullname"> {{ userInfo.fname }} {{ userInfo.lname }} </li>
                     <li v-show="userInfo.job_title"> {{ userInfo.job_title }} </li>
                   </ul>
                 </div>

@@ -1,3 +1,6 @@
 <template>
-  <p>Signing in...</p>
+  <div class="main-layout">
+    <Navbar/>
+    <HelperFetchingPlaceholder v-if="true" msg="Signing you in ..."/>
+  </div>
 </template>
