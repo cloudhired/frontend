@@ -130,8 +130,16 @@ export default {
       this.company ? this.basicInfo.company = this.company : null; 
       this.yoe ? this.basicInfo.yoe = this.yoe : null; 
       this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
-      alert(JSON.stringify(this.basicInfo) || "user has not typed")
-      await this.$http.$post(`/api/user/${this.$route.params.id}`, this.basicInfo)
+      if (this.isPageOwner() && Object.keys(this.basicInfo).length != 0) {
+        await this.$http.$post(`/api/user/${this.$route.params.id}`, this.basicInfo)
+        .then(() => {
+          console.log("Finished")
+          this.toogleEditModal(this.editModalId)
+          this.userInfo.current_loc = this.current_loc
+        }, () => {
+          console.log("Failed")
+        })
+      }
     }
   }
 }
