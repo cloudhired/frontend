@@ -18,10 +18,9 @@ router.get('/user/:id', async function (req, res, next) {
 // change user information 
 router.post('/user/:id', jsonParser, async function (req, res) {
   console.dir(req.body)
-  // TODO: validate user has right to modify
-  const update = await UsersDAO.updateUserInfo(req.params.id, req.body.email, req.body.setInfo)
-  console.log(update)
-  res.json(update)
+  const query = await UsersDAO.updateUserInfo(req.params.id, req.body.email, req.body.setInfo)
+  console.log(query)
+  res.json(query)
 })
 
 export default router

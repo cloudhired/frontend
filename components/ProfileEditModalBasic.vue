@@ -139,10 +139,16 @@ export default {
           payload.setInfo = this.basicInfo
           console.log(payload)
           await this.$http.$post(`/api/user/${this.$route.params.id}`, payload)
-          .then((value) => {
-            console.log("Finished", value)
-            this.toogleEditModal(this.editModalId)
-            this.updateUserInfo(this.basicInfo)
+          .then((res) => {
+            console.log("Finished", res)
+            if (res.error == null ) {
+              this.toogleEditModal(this.editModalId)
+              this.updateUserInfo(this.basicInfo)
+            } else {
+              // TODO: remind user of error when updating
+              alert("not successful")
+            }
+
           }, () => {
             console.log("Failed")
           })

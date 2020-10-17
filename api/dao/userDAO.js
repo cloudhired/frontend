@@ -24,7 +24,7 @@ export default class UsersDAO {
   static async updateUserInfo(username, email, info) {
     try {  
       const updateResponse = await users.updateOne(
-        { username: username, email: 'email' },
+        { username: username, email: email },
         { $set:  info  },
         { upsert: false }
       )
@@ -32,7 +32,7 @@ export default class UsersDAO {
       if (updateResponse.matchedCount === 0) {
         return { error: "No user found with that email" }
       }
-      return updateResponse
+      return { error: null }
     } catch (e) {
       console.error(
         `An error occurred while updating this user's information, ${e}`,
