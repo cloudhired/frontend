@@ -15,7 +15,7 @@
                 <div class="container">
                   <ul class="profile mt-1">
                     <li v-if="userInfo.fullname"> {{ userInfo.fullname }} </li>
-                    <li v-show="userInfo.title"> {{ userInfo.title }} </li>
+                    <li v-show="userInfo.job_title"> {{ userInfo.job_title }} </li>
                   </ul>
                 </div>
               </div>
@@ -349,6 +349,11 @@ export default {
         return false
       }
     },
+    updateUserInfo: function (part) {
+      Object.keys(part).forEach(key => {
+        this.userInfo[key] = part[key]
+      });
+    },
     toogleEditModal (editBtn) {
       switch(editBtn) {
         case "editBasicBtn": this.isEditBasicBtn = !this.isEditBasicBtn
@@ -390,7 +395,8 @@ export default {
   provide: function() {
           return {
             isPageOwner: this.isPageOwner, 
-            toogleEditModal: this.toogleEditModal
+            toogleEditModal: this.toogleEditModal, 
+            updateUserInfo: this.updateUserInfo
           };
         }
 

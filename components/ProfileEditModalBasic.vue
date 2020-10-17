@@ -39,7 +39,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input class="input is-static" type="text" :placeholder="userInfo.title">
+                  <input v-model="job_title" class="input is-static" type="text" :placeholder="userInfo.job_title">
                 </p>
               </div>
             </div>
@@ -105,14 +105,14 @@
 
 <script>
 export default {
-  inject: ["isPageOwner", "toogleEditModal"],
+  inject: ["isPageOwner", "toogleEditModal", "updateUserInfo"],
   props: ['editModalId', 'isEditBasicBtn', 'userInfo'], 
 
   data() {
     return {
       fname: '', 
       lname: '',
-      title: '',
+      job_title: '',
       current_loc: '',
       company: '',
       yoe: '',
@@ -123,22 +123,30 @@ export default {
 
   methods: {
     sbtBasic: async function () {
-      this.fname ? this.basicInfo.fname = this.fname : null;
-      this.lname ? this.basicInfo.lname = this.lname : null; 
-      this.title ? this.basicInfo.title = this.title : null;
-      this.current_loc ? this.basicInfo.current_loc = this.current_loc : null; 
-      this.company ? this.basicInfo.company = this.company : null; 
-      this.yoe ? this.basicInfo.yoe = this.yoe : null; 
-      this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
-      if (this.isPageOwner() && Object.keys(this.basicInfo).length != 0) {
-        await this.$http.$post(`/api/user/${this.$route.params.id}`, this.basicInfo)
-        .then(() => {
-          console.log("Finished")
-          this.toogleEditModal(this.editModalId)
-          this.userInfo.current_loc = this.current_loc
-        }, () => {
-          console.log("Failed")
-        })
+      //TODO: validate each blank
+      if (this.isPageOwner()) {
+        this.fname ? this.basicInfo.fname = this.fname : null;
+        this.lname ? this.basicInfo.lname = this.lname : null; 
+        this.job_title ? this.basicInfo.job_title = this.job_title : null;
+        this.current_loc ? this.basicInfo.current_loc = this.current_loc : null; 
+        this.company ? this.basicInfo.company = this.company : null; 
+        this.yoe ? this.basicInfo.yoe = this.yoe : null; 
+        this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
+        // submit change if basic info is not null
+        if (Object.keys(this.basicInfo).length != 0) {
+          let payload = {}
+          payload.email = this.userInfo.email 
+          payload.setInfo = this.basicInfo
+          console.log(payload)
+          await this.$http.$post(`/api/user/${this.$route.params.id}`, payload)
+          .then((value) => {
+            console.log("Finished", value)
+            this.toogleEditModal(this.editModalId)
+            this.updateUserInfo(this.basicInfo)
+          }, () => {
+            console.log("Failed")
+          })
+        }
       }
     }
   }

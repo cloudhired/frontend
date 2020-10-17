@@ -21,10 +21,10 @@ export default class UsersDAO {
   }
 
   // update user information
-  static async updateUserInfo(email, info) {
+  static async updateUserInfo(username, email, info) {
     try {  
       const updateResponse = await users.updateOne(
-        { username: email },
+        { username: username, email: 'email' },
         { $set:  info  },
         { upsert: false }
       )
@@ -35,7 +35,7 @@ export default class UsersDAO {
       return updateResponse
     } catch (e) {
       console.error(
-        `An error occurred while updating this user's preferences, ${e}`,
+        `An error occurred while updating this user's information, ${e}`,
       )
       return { error: e }
     }
