@@ -61,7 +61,9 @@
               <strong> Introduction </strong>
             </div>
             <ProfileEditButton editBtnId="editIntroBtn" />
-            <ProfileEditModalIntro editModalId="editIntroModal" v-bind:isEditIntroBtn="isEditIntroBtn" />
+            <ProfileEditModalIntro editModalId="editIntroModal" 
+              v-bind:isEditIntroBtn="isEditIntroBtn"
+              v-bind:userInfo="userInfo"/>
           </div>
           <div class="profile t">
             {{ userInfo.intro }}

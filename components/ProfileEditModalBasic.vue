@@ -15,7 +15,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="fname" class="input is-static" type="text" :placeholder="userInfo.fname" autofocus>
+                  <input v-model="fname" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -27,7 +27,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="lname" class="input is-static" type="text" :placeholder="userInfo.lname">
+                  <input v-model="lname" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -39,7 +39,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="job_title" class="input is-static" type="text" :placeholder="userInfo.job_title">
+                  <input v-model="job_title" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -51,7 +51,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="current_loc" class="input is-static" type="text" :placeholder="userInfo.current_loc">
+                  <input v-model="current_loc" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -63,7 +63,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="company" class="input is-static" type="text" :placeholder="userInfo.company">
+                  <input v-model="company" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="yoe" class="input is-static" type="text" :placeholder="userInfo.yoe">
+                  <input v-model="yoe" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -87,7 +87,7 @@
             <div class="field-body">
               <div class="field">
                 <p class="control">
-                  <input v-model="personal_site" class="input is-static" type="text" :placeholder="userInfo.personal_site">
+                  <input v-model="personal_site" class="input is-static" type="text">
                 </p>
               </div>
             </div>
@@ -110,13 +110,13 @@ export default {
 
   data() {
     return {
-      fname: '', 
-      lname: '',
-      job_title: '',
-      current_loc: '',
-      company: '',
-      yoe: '',
-      personal_site: '',
+      fname: this.userInfo.fname, 
+      lname: this.userInfo.lname,
+      job_title: this.userInfo.job_title,
+      current_loc: this.userInfo.current_loc,
+      company: this.userInfo.company,
+      yoe: this.userInfo.yoe,
+      personal_site: this.userInfo.personal_site,
       basicInfo: {}
     }
   },
