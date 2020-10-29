@@ -7,11 +7,11 @@
         <button v-on:click="toogleEditModal(editModalId)" class="delete" aria-label="close"></button>
       </header>
       <section class="modal-card-body">
-        <div class="field is-grouped mx-4 mb-4">
+        <div class="field is-grouped mb-4">
           <input v-model="skillToAdd" class="input is-small mr-2" type="text" placeholder="Type a skill you have here">
           <button v-on:click="addSkill()" class="button is-small">Add Skill</button>
         </div> 
-        <div class="field is-grouped is-grouped-multiline mx-4 my-4">
+        <div class="field is-grouped is-grouped-multiline my-4">
           <div class="control" v-for="skill in skills" v-bind:key="skill">
               <div class="tags has-addons">
               <a class="tag is-link"> {{ skill }} </a>
@@ -55,7 +55,6 @@ export default {
         if (index == -1) {
           this.skills.push(this.skillToAdd);
         }
-      console.log(this.skills)
     },
     sbtSkills: async function () {
       if (this.isPageOwner()) {
