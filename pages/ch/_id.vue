@@ -76,7 +76,9 @@
               <button @click="$fetch">Refresh</button>
             </div>
             <ProfileEditButton editBtnId="editSkillsBtn" />
-            <ProfileEditModalSkills editModalId="editSkillsModal" v-bind:isEditSkillsBtn="isEditSkillsBtn" />
+            <ProfileEditModalSkills editModalId="editSkillsModal" 
+              v-bind:isEditSkillsBtn="isEditSkillsBtn"
+              v-bind:userInfo="userInfo"/>
           </div>
           
           <div class="field is-grouped is-grouped-multiline mx-4 my-4">
