@@ -21,7 +21,7 @@
         </div>
       </section>
       <footer class="modal-card-foot">
-        <button v-on:click="sbtSkillss()" class="button is-primary">Save changes</button>
+        <button v-on:click="sbtSkills()" class="button is-primary">Save changes</button>
         <button v-on:click="toogleEditModal(editModalId)" class="button">Cancel</button>
       </footer>
     </div>
@@ -50,14 +50,12 @@ export default {
     },
     addSkill: function () {
       // TODO: if empty or not
+      // TODO: stringify everything
       const index = this.skills.indexOf(this.skillToAdd);
         if (index == -1) {
           this.skills.push(this.skillToAdd);
         }
       console.log(this.skills)
-    },
-    sbtSkillss: function () {
-      console.log("it is a function")
     },
     sbtSkills: async function () {
       if (this.isPageOwner()) {
