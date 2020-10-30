@@ -96,7 +96,9 @@
               <strong> Certifications </strong>
             </div>
             <ProfileEditButton editBtnId="editCertsBtn" />
-            <ProfileEditModalCerts editModalId="editCertsModal" v-bind:isEditCertsBtn="isEditCertsBtn" />
+            <ProfileEditModalCerts editModalId="editCertsModal" 
+              v-bind:isEditCertsBtn="isEditCertsBtn"
+              v-bind:userInfo="userInfo"/>
           </div>
           <div class="profile t">
             <table class="table cert">
