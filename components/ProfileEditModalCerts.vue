@@ -42,11 +42,6 @@ export default {
   data() {
     return {
       isInEdit: false, 
-
-
-
-
-      
     }
   },
 }

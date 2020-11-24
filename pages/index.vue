@@ -32,7 +32,7 @@
     <div class="">
       <table class="table is-hoverable is-full">
         <tbody>
-          <tr style="height:6rem" v-for="user in users" :key="user.name">
+          <tr style="height:6rem" v-for="user in users.results" :key="user.name">
             <th> {{ user.name }} </th>
             <td> {{user.location }} </td>
             <td> {{user.company }} </td>
