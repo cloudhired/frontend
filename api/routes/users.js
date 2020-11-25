@@ -11,8 +11,32 @@ const users = [
 
 /* GET users listing. */
 router.get('/users', async function (req, res, next) {
-  const pros = await db.getCollection('professionals', 'professional_profiles');
-  res.send({ "results": await pros.find({}).toArray()})
+  const pros = await db.getCollection('cloudhired', 'users');
+  // let result = await pros.find({}).project({ name: 1, location:1, yoe: 1}).toArray()
+  let result = await pros.aggregate([
+    {
+      '$project': {
+        'username': 1,
+        'fullname': 1, 
+        'job_title': 1,
+        'current_loc': 1,
+        'company': 1,
+        'number_certs': {
+          '$cond': {
+            'if': {
+              '$isArray': '$certs'
+            }, 
+            'then': {
+              '$size': '$certs'
+            }, 
+            'else': 'NA'
+          }
+        }
+      }
+   }
+  ]).toArray()
+  console.log(result)
+  res.send({ "results": result})
 })
 
 export default router

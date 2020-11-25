@@ -14,6 +14,10 @@ export default class UsersDAO {
     }
   }
 
+  static async getUsers() {
+    return await users.find({}).project({ username: 1, fullname: 1, current_loc: 1, job_title:1, company: 1, })
+  }
+
   static async getUser(username) {
     // Retrieve the user document corresponding with the user's username.
     // There are couple UUID we can use to identify user: username, email, _id. 
