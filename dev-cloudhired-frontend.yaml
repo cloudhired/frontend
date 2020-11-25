@@ -26,7 +26,7 @@ env_variables:
 
 automatic_scaling:
   target_cpu_utilization: 0.65
-  min_instances: 0
+  min_instances: 1
   max_instances: 2
   min_pending_latency: 30ms
   max_pending_latency: automatic
