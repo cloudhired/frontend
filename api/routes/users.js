@@ -21,6 +21,7 @@ router.get('/users', async function (req, res, next) {
         'job_title': 1,
         'current_loc': 1,
         'company': 1,
+        'email': 1,
         'number_certs': {
           '$cond': {
             'if': {
