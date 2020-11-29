@@ -24,6 +24,17 @@ export default class UsersDAO {
     return await users.findOne({ username: username })
   }
 
+  static async getUserByEmail(email) {
+    // Retrieve the user document corresponding with the user's username.
+    // There are couple UUID we can use to identify user: username, email, _id. 
+    let res = await users.findOne({ email: email })
+    if (res == null) {
+      await users.insertOne({ email: email})
+      res = await users.findOne({ email: email })
+    }
+    return res
+  }
+
   // update user information
   static async updateUserInfo(username, email, info) {
     try {  

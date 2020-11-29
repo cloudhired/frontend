@@ -15,6 +15,12 @@ router.get('/user/:id', async function (req, res, next) {
   res.send(userInfo)
 })
 
+router.get('/email/:id', async function (req, res, next) {
+  console.log(req.params.id)
+  const userInfo = await UsersDAO.getUserByEmail(req.params.id)
+  res.send({ "data": userInfo })
+})
+
 // change user information 
 router.post('/user/:id', jsonParser, async function (req, res) {
   console.dir(req.body)

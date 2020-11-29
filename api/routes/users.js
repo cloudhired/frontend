@@ -36,7 +36,6 @@ router.get('/users', async function (req, res, next) {
       }
    }
   ]).toArray()
-  console.log(result)
   res.send({ "results": result})
 })
 
