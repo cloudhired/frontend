@@ -12,9 +12,10 @@ router.get('/user/:id', async function (req, res, next) {
   // testing port
   // console.dir(userInfo)
   // const pros = await db.getCollection('professionals', 'professional_profiles');
-  res.send(userInfo)
+  res.send({ "data": userInfo })
 })
 
+// find user by email, if does not exist, insert email
 router.get('/email/:id', async function (req, res, next) {
   console.log(req.params.id)
   const userInfo = await UsersDAO.getUserByEmail(req.params.id)
