@@ -29,8 +29,8 @@ export default class UsersDAO {
     // There are couple UUID we can use to identify user: username, email, _id. 
     let res = await users.findOne({ email: email })
     if (res == null) {
-      await users.insertOne({ email: email})
-      res = await users.findOne({ email: email })
+      await users.insertOne({ email: email, username: email })
+      res = await users.findOne({ email: email})
     }
     return res
   }
@@ -40,6 +40,27 @@ export default class UsersDAO {
     try {  
       const updateResponse = await users.updateOne(
         { username: username, email: email },
+        { $set:  info  },
+        { upsert: false }
+      )
+
+      if (updateResponse.matchedCount === 0) {
+        return { error: "No user found with that email" }
+      }
+      return { error: null }
+    } catch (e) {
+      console.error(
+        `An error occurred while updating this user's information, ${e}`,
+      )
+      return { error: e }
+    }
+  }
+
+  // Temporary function for Android. use only email to identify users.
+  static async updateUserInfoMobile(email, info) {
+    try {  
+      const updateResponse = await users.updateOne(
+        { email: email },
         { $set:  info  },
         { upsert: false }
       )

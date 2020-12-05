@@ -311,7 +311,8 @@ export default {
   }, 
   async fetch () {
     // TODO: I believe I shouldn't have to add domain name in prod. Need more research. 
-    this.userInfo = await this.$http.$get(`/api/user/${this.$route.params.id}`)
+    this.userInfo = await this.$http.$get(`/api/username/${this.$route.params.id}`)
+    this.userInfo = this.userInfo.data
       // .then(userInfo => userInfo)
   },
   head() {
