@@ -55,7 +55,7 @@ export default {
     }
   }, 
   async fetch () {
-    this.users = await this.$http.$get('/api/users')
+    this.users = await this.$http.$get(process.env.API_EP + '/api/users')
       .then(users => users)
   },
   head() {
