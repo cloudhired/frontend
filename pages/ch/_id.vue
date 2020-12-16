@@ -311,7 +311,7 @@ export default {
   }, 
   async fetch () {
     // TODO: I believe I shouldn't have to add domain name in prod. Need more research. 
-    this.userInfo = await this.$http.$get(`/api/username/${this.$route.params.id}`)
+    this.userInfo = await this.$http.$get(process.env.API_EP + '/api/username/' + this.$route.params.id)
     this.userInfo = this.userInfo.data
       // .then(userInfo => userInfo)
   },
@@ -335,7 +335,6 @@ export default {
   mounted() {
     this.$nextTick(() => {
       // this.$nuxt.$loading.start()
-      // alert("hi")
       // setTimeout(() => this.$nuxt.$loading.finish(), 500)
       const squares = document.querySelector('.squares');
       for (var i = 1; i < 365; i++) {
