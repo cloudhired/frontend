@@ -23,7 +23,9 @@
                 <ProfileEditButton editBtnId="editBasicBtn" />
                 <ProfileEditModalBasic editModalId="editBasicModal" 
                   v-bind:isEditBasicBtn="isEditBasicBtn" 
-                  v-bind:userInfo="userInfo" />
+                  v-bind:userInfo="userInfo"
+                  v-bind:apiEndPoint="apiEndPoint"
+                  v-bind:apiKey="apiKey"/>
                 <div class="mt-4">
                   <ul class="profile-b">
                     <li>
@@ -301,6 +303,8 @@ export default {
   data() {
     return {
       userInfo: [],
+      apiEndPoint: process.env.API_EP,
+      apiKey: process.env.API_KEY,
       isEditBasicBtn: false,
       isEditIntroBtn: false,
       isEditSkillsBtn: false,

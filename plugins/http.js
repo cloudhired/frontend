@@ -3,7 +3,7 @@
 export default function ({ $http }) {
   $http.setHeader('x-api-key', process.env.API_KEY)
   $http.onRequest(config => {
-    console.log('Making request to ' + config.url)
+    console.log('Making ' + config.method + ' request to ' + config.url)
   })
 
 //   $http.onRetry(async (request, options, errors, retryCount) => {

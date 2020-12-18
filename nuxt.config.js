@@ -72,10 +72,11 @@ export default {
 
   proxy: {
     '/api': {
-      target: 'https://cloudhired.com',
+      target: process.env.API_EP,
       pathRewrite: {
         '^/api' : '/'
-        }
+        },
+      changeOrigin: true
       }
   },
 
