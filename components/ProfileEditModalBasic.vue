@@ -134,7 +134,6 @@ export default {
         this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
         // submit change if basic info is not null
         if (Object.keys(this.basicInfo).length != 0) {
-          this.$http.setHeader('x-api-key', this.apiKey)
           await this.$http.$post(this.apiEndPoint + '/api/username/' + this.$route.params.id, this.basicInfo)
           .then((res) => {
             console.log("Finished", res)
