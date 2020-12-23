@@ -25,6 +25,7 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "firebase": "^8.2.1",
+    "firebaseui": "^4.7.1",
     "ky": "^0.25.1",
     "ky-universal": "^0.8.2",
     "mailgun-js": "^0.22.0",

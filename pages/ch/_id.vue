@@ -409,7 +409,6 @@ export default {
             updateUserInfo: this.updateUserInfo
           };
         }
-
 }
 </script>
 

@@ -43,8 +43,10 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a @click="login()">LOG IN</a>
+                <a v-on:click="toggleSignInModal()">LOG IN</a>
               </div>
+              <SignIn 
+                v-bind:isSignInModal="isSignInModal"/>
             </div>
         </div>
       </nav>
@@ -60,7 +62,8 @@ export default {
 
   data() {
     return {
-      isDropped: false
+      isDropped: false, 
+      isSignInModal: false,
     }
   },
   computed: {
@@ -76,8 +79,16 @@ export default {
     },
     toggleClass: function (event) {
       alert(JSON.stringify(this.$auth.user))
+    },
+    toggleSignInModal () {
+      this.isSignInModal = !this.isSignInModal
     }
   }, 
+  provide: function() {
+          return {
+            toggleSignInModal: this.toggleSignInModal, 
+          };
+        }
 }
 </script>
 

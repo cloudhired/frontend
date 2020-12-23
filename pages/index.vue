@@ -51,7 +51,8 @@ export default {
   // TODO: when nav back to index, there occurs network error and couldn't render the page. I suspect it is because of this function. 
   data() {
     return {
-      users: []
+      users: [],
+      isSignInModal: false,
     }
   }, 
   async fetch () {
@@ -69,7 +70,17 @@ export default {
           }
         ]
     }
-  }
+  },
+  methods: {
+    toggleSignInModal: function() {
+      this.isSignInModal = !this.isSignInModal
+    }
+  }, 
+  provide: function() {
+          return {
+            toggleSignInModal: this.toggleSignInModal, 
+          };
+        }
 }
 </script>
 
