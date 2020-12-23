@@ -1,13 +1,8 @@
 <template>
   <div id="signInModel" v-bind:class="{'modal':true, 'is-active':isSignInModal}">
     <div class="modal-background"></div>
-    <div class="modal-card">        
-      <button v-on:click="isSignInModal = !isSignInModal" class="delete" aria-label="close"></button>
-    </div>
+    <button v-on:click="toggleSignInModal()" class="modal-close is-large" aria-label="close"></button>
   </div>
-  <!-- <div id="firebaseui-auth-container">
-
-  </div> -->
 </template>
 
 <script>
@@ -16,7 +11,7 @@
 // import firebaseui from 'firebaseui'
 
 export default {
-  inject: ["toogleSignInModal"],
+  inject: ["toggleSignInModal"],
   props: ['isSignInModal'],
   mounted() {
     const firebaseui = require('firebaseui')

@@ -1,5 +1,6 @@
 <template>
     <section class="section" id="navbar-container">
+      <SignIn v-bind:isSignInModal="isSignInModal"/>
       <nav class="navbar py-4" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
             <nuxt-link class="navbar-item start" to="/">
@@ -43,10 +44,8 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a v-on:click="toggleSignInModal()">LOG IN</a>
+                <a v-on:click="toggleSignInModal()">Log in</a>
               </div>
-              <SignIn 
-                v-bind:isSignInModal="isSignInModal"/>
             </div>
         </div>
       </nav>
