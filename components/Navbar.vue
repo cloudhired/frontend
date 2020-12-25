@@ -72,9 +72,10 @@ export default {
     },
     logout() {
       this.$store.dispatch('signOut')
-      // .then(() => {
-      //   this.$router.replace({ path: '/' })
-      // })
+      .then(() => {
+        location.reload()
+        // this.$router.replace({ path: '/' })
+      })
     }
   }, 
   provide: function() {
