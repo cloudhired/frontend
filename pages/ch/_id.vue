@@ -315,7 +315,7 @@ export default {
   }, 
   async fetch () {
     // TODO: I believe I shouldn't have to add domain name in prod. Need more research. 
-    this.userInfo = await this.$http.$get(process.env.API_EP + '/api/username/' + this.$route.params.id)
+    this.userInfo = await this.$http.$get('https:api.cloudhired.com/api/username/' + this.$route.params.id)
     this.userInfo = this.userInfo.data
       // .then(userInfo => userInfo)
   },

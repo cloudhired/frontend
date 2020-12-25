@@ -73,6 +73,7 @@ export default {
     logout() {
       this.$store.dispatch('signOut')
       .then(() => {
+        // refresh to restart firebaseUI. cheap fix. need improvement. 
         location.reload()
         // this.$router.replace({ path: '/' })
       })
