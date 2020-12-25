@@ -32,12 +32,12 @@
     <div class="">
       <table class="table is-hoverable is-full">
         <tbody>
-          <tr style="height:6rem" v-for="user in users.results" :key="user.name">
-            <th> {{ user.fullname}} </th>
-            <td> {{ user.current_loc }} </td>
-            <td> {{ user.company }} </td>
-            <td> {{ user.yoe }} </td>
-            <td> {{ user.number_certs }} </td>
+          <tr style="height:6rem" v-for="u in users.results" :key="u.name">
+            <th> {{ u.fullname}} </th>
+            <td> {{ u.current_loc }} </td>
+            <td> {{ u.company }} </td>
+            <td> {{ u.yoe }} </td>
+            <td> {{ u.number_certs }} </td>
           </tr>
         </tbody>
       </table>
@@ -56,7 +56,7 @@ export default {
     }
   }, 
   async fetch () {
-    this.users = await this.$http.$get(process.env.API_EP + '/api/users')
+    this.users = await this.$http.$get('https://api.cloudhired.com/api/users')
       .then(users => users)
   },
   head() {
@@ -70,17 +70,7 @@ export default {
           }
         ]
     }
-  },
-  methods: {
-    toggleSignInModal: function() {
-      this.isSignInModal = !this.isSignInModal
-    }
-  }, 
-  provide: function() {
-          return {
-            toggleSignInModal: this.toggleSignInModal, 
-          };
-        }
+  }
 }
 </script>
 

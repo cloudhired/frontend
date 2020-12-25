@@ -299,7 +299,7 @@
 <script>
 export default {
   layout: 'index',
-  auth: false,
+  // auth: false,
   data() {
     return {
       userInfo: [],
@@ -333,7 +333,7 @@ export default {
   }, 
   computed: {
       user() {
-        return this.$auth.user
+        // return this.$auth.user
       }
   },
   mounted() {
@@ -349,8 +349,10 @@ export default {
   }, 
   methods: {
     isPageOwner: function () {
-      if (this.$auth.loggedIn) {
-        if (this.$auth.user.email === this.userInfo.email) {
+      if (true) {
+      // if (this.$auth.loggedIn) {
+        if (true) {
+        // if (this.$auth.user.email === this.userInfo.email) {
           return true
         } else {
           return false

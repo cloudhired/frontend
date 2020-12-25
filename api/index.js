@@ -17,20 +17,20 @@ app.use(bodyParser.json())
 
 export default app
 
-MongoClient.connect(
-  process.env.MONGO_CONN_STR,
-  { useNewUrlParser: true, poolSize: 50, wtimeout: 2500, useUnifiedTopology: true },
-)
-  .catch(err => {
-    console.error(err.stack)
-    process.exit(1)
-  })
-  .then(async client => {
-    await UsersDAO.injectDB(client)
-    if (require.main === module) {
-      const port = process.env.PORT || 8081
-      app.listen(port, () => {
-        console.log(`API server listening on port ${port}`)
-      })
-    }
-  })
+// MongoClient.connect(
+//   process.env.MONGO_CONN_STR,
+//   { useNewUrlParser: true, poolSize: 50, wtimeout: 2500, useUnifiedTopology: true },
+// )
+//   .catch(err => {
+//     console.error(err.stack)
+//     process.exit(1)
+//   })
+//   .then(async client => {
+//     await UsersDAO.injectDB(client)
+//     if (require.main === module) {
+//       const port = process.env.PORT || 8081
+//       app.listen(port, () => {
+//         console.log(`API server listening on port ${port}`)
+//       })
+//     }
+//   })

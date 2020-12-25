@@ -9,39 +9,54 @@
 // import firebase from 'firebase/app'
 // import 'firebaseui/dist/firebaseui.css'
 // import firebaseui from 'firebaseui'
+import { fireAuth, authProviders } from '~/plugins/firebase'
 
 export default {
   inject: ["toggleSignInModal"],
   props: ['isSignInModal'],
-  mounted() {
-    const firebaseui = require('firebaseui')
-    require("firebaseui/dist/firebaseui.css")
-    // https://github.com/firebase/firebaseui-web/issues/216
-    // for below version 7
-    // const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(this.$fireAuth)
-    // for version 7 and above
-    const ui = firebaseui.auth.AuthUI.getInstance() || new firebaseui.auth.AuthUI(this.$fire.auth)
-
-    const config = {
-      signInOptions: [
-        // firebase.auth.GoogleAuthProvider.PROVIDER_ID
-        // this.$fireAuthObj.GoogleAuthProvider.PROVIDER_ID
-        this.$fireModule.auth.GoogleAuthProvider.PROVIDER_ID
-      ],
-      signInSuccessUrl: '/',
-      // tosUrl: '/tos',
-      // privacyPolicyUrl: '/privacy',
-      callbacks: {
-        signInSuccessWithAuthResult() {
-          console.log('signInSuccessWithAuthResult')
-        },
-        uiShown: function () {
-          console.log('uiShown')
+  mounted: function() {
+    // if (process.browser) {
+      const firebaseui = require('firebaseui')
+      require("firebaseui/dist/firebaseui.css")
+      const ui =
+        firebaseui.auth.AuthUI.getInstance() ||
+        new firebaseui.auth.AuthUI(fireAuth)
+      const config = {
+        // credentialHelper: firebaseui.auth.CredentialHelper.NONE,
+        signInOptions: [authProviders.Google, authProviders.Email],
+        signInFlow: 'popup',
+        // tosUrl: '/tos',
+        // privacyPolicyUrl: '/privacy-policy',
+        callbacks: {
+          // signInSuccessWithAuthResult: this.signInResult
+          signInSuccessWithAuthResult() {
+            console.log('signInSuccessWithAuthResult... setting modal display to false')
+            this.toggleSignInModal()
+          },
+          uiShown: function () {
+            console.log('uiShown')
+          }
         }
       }
+      ui.start('#signInModel', config)
+      // ui.disableAutoSignIn()
+      // if (this.$store.state.user) {
+      //   this.openAppPage()
+      // } else {
+      //   ui.start('#signInModel', config)
+      // }
+    // }
+  },
+  methods: {
+    signInResult() {
+      // this.openAppPage()
+      return false
+    },
+    openAppPage() {
+      this.$router.push({
+        path: '/'
+      })
     }
-
-    ui.start('#signInModel', config)
   }
 }
 </script>

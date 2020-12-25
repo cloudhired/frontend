@@ -22,12 +22,12 @@
               <div class="navbar-item"><a>Read</a></div>
             </div>
             <div class="navbar-end">
-              <div class="navbar-item end" v-if="$auth.loggedIn">
+              <div class="navbar-item end" v-if="$store.state.user">
                 <div id="navbar-dropdown" class="dropdown is-right"  v-bind:class="[isDropped ? 'is-active' : '']" @click="isDropped = !isDropped">
                   <div class="dropdown-trigger">
                     <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                      <img class="is-rounded mr-2" :src="user.picture"/>
-                      <span> {{ user.name }} </span>
+                      <img class="is-rounded mr-2" :src="user.photoURL"/>
+                      <span> {{ user.displayName }} </span>
                       <span class="icon is-small">
                         <span class="icon"><fa icon="angle-down"/></span>
                       </span>
@@ -35,10 +35,10 @@
                   </div>
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <nuxt-link :to="{ name: 'ch-id', params: { id: user.nickname }}" class="dropdown-item">Edit Profile</nuxt-link>
+                      <nuxt-link :to="{ name: 'ch-id', params: { id: user.displayName }}" class="dropdown-item">Edit Profile</nuxt-link>
                       <!-- <a href="/ch/gaomengen">Edit Profileee </a> -->
                       <hr class="dropdown-divider">
-                      <a class="dropdown-item" @click="$auth.logout()"> Log Out </a>
+                      <a class="dropdown-item" @click="logout()"> Log Out </a>
                     </div>
                   </div>
                 </div>
@@ -54,11 +54,7 @@
 
 <script>
 export default {
-  auth: false, 
-  fetch ({ store }) {
-    console.dir(store)
-  }, 
-
+  // auth: false, 
   data() {
     return {
       isDropped: false, 
@@ -67,20 +63,18 @@ export default {
   },
   computed: {
     user() {
-      return this.$auth.user
-    }
+      return this.$store.state.user
+    }, 
   },
   methods: {
-    login () {
-      console.log("login")
-      console.dir(this.$store.$auth)
-      this.$auth.loginWith('auth0')
-    },
-    toggleClass: function (event) {
-      alert(JSON.stringify(this.$auth.user))
-    },
     toggleSignInModal () {
       this.isSignInModal = !this.isSignInModal
+    },
+    logout() {
+      this.$store.dispatch('signOut')
+      // .then(() => {
+      //   this.$router.replace({ path: '/' })
+      // })
     }
   }, 
   provide: function() {
