@@ -33,11 +33,6 @@ export default {
         }
       }
       ui.start('#signInModel', config)
-      fireAuth.onAuthStateChanged(function() {
-        if (!this.$store.state.user) {
-          ui.start('#signInModel', config)
-        }
-      })
       // ui.disableAutoSignIn()
       // if (this.$store.state.user) {
       //   this.openAppPage()

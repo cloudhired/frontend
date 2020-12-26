@@ -35,8 +35,8 @@
                   </div>
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <nuxt-link :to="{ name: 'ch-id', params: { id: user.displayName }}" class="dropdown-item">Edit Profile</nuxt-link>
-                      <!-- <a href="/ch/gaomengen">Edit Profileee </a> -->
+                      <!-- <nuxt-link :to="{ name: 'ch-id', params: { id: user.displayName }}" class="dropdown-item">Edit Profile</nuxt-link> -->
+                      <a class="dropdown-item" @click="editProfile()">Edit Profile </a>
                       <hr class="dropdown-divider">
                       <a class="dropdown-item" @click="logout()"> Log Out </a>
                     </div>
@@ -59,6 +59,7 @@ export default {
     return {
       isDropped: false, 
       isSignInModal: false,
+      userID: "",
     }
   },
   computed: {
@@ -69,6 +70,13 @@ export default {
   methods: {
     toggleSignInModal () {
       this.isSignInModal = !this.isSignInModal
+    },
+    // get userId based on Firebase user UID, if does not exist, create one and return it. 
+    async editProfile() {
+      if (this.$store.state.user) {
+        this.userID = await this.$http.$get('https://api.cloudhired.com/api/users')
+          // .then(users => users)
+      }
     },
     logout() {
       this.$store.dispatch('signOut')
