@@ -3,7 +3,8 @@ import { fireAuth } from '@/plugins/firebase.js'
 export const strict = false
 
 export const state = () => ({
-  user: null
+  user: null, 
+  token: null
 })
 
 export const mutations = {

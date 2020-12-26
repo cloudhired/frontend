@@ -31,7 +31,8 @@ export default {
   plugins: [
     '@/plugins/vue-content-placeholder.js',
     '@/plugins/http',
-    '~/plugins/fireauth.js'
+    '~/plugins/fireauth.js',
+    '~/plugins/firebase.js'
   ],
   /*
   ** Nuxt.js dev-modules

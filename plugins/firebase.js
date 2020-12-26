@@ -22,3 +22,13 @@ export const authProviders = {
 }
 export const fireDb = firebase.firestore()
 export const fireAuth = firebase.auth()
+
+export default ({ app }, inject) => {
+  // Inject $hello(msg) in Vue, context and store.
+  inject('hello', function () {
+    fireAuth.currentUser.getIdToken().then(function(idToken) {
+      // Send token to your backend via HTTPS
+      console.log(idToken)
+    })
+  })
+}

@@ -74,6 +74,7 @@ export default {
     // get userId based on Firebase user UID, if does not exist, create one and return it. 
     async editProfile() {
       if (this.$store.state.user) {
+        console.log(this.$hello())
         this.userID = await this.$http.$get('https://api.cloudhired.com/api/users')
           // .then(users => users)
       }
