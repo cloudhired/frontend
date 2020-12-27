@@ -1,6 +1,6 @@
 import { fireAuth } from '@/plugins/firebase.js'
 
-export default context => {
+export default (context) => {
   const { store } = context
 
   return new Promise((resolve, reject) => {
