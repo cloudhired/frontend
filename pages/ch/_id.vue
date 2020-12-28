@@ -318,7 +318,6 @@ export default {
     this.userInfo = await this.$http.$get('https://api.cloudhired.com/api/username/' + this.$route.params.id)
     this.userInfo = this.userInfo.data
       // .then(userInfo => userInfo)
-      
   },
   head() {
     return {
