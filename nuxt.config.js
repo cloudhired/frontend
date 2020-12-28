@@ -59,7 +59,7 @@ export default {
   */
   modules: [
     '@nuxtjs/bulma',        // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
-    '@nuxtjs/axios',        // axios is required by @nuxtjs/auth
+    // '@nuxtjs/axios',        // axios is required by @nuxtjs/auth
     // '@nuxtjs/auth',         // https://auth.nuxtjs.org
     '@nuxt/http',
     // '@nuxtjs/proxy',        // allow CORS
