@@ -2,6 +2,11 @@
 export default {
   ssr: false,
   components: true,
+  server: {
+    port: 8080, // default: 8080
+    host: '0.0.0.0', // default: localhost,
+    timing: false
+  },
   /*
   ** Headers of the page
   */
