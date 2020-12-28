@@ -4,12 +4,15 @@ export const strict = false
 
 export const state = () => ({
   user: null, 
-  token: null
+  username: null
 })
 
 export const mutations = {
   setUser(state, payload) {
     state.user = payload
+  },
+  setTest(state, payload) {
+    state.username = payload
   }
 }
 

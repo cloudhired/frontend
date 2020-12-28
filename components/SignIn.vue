@@ -46,6 +46,7 @@ export default {
       // this.openAppPage()
       console.log('signInSuccessWithAuthResult... setting modal display to false')
       this.toggleSignInModal()
+      this.$jwtHttpUsername()
       return false
     },
     openAppPage() {
