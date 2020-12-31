@@ -5,7 +5,8 @@ export default ({ store, app, $http }, inject) => {
     fireAuth.currentUser.getIdToken().then(async function(idToken) {
       // Send token to your backend via HTTPS
       $http.setHeader('Authorization', `Bearer ${idToken}`)
-      $http.$get(`https://api.cloudhired.com/api/uidtousername/${idToken}`)
+      $http.setHeader('x-auth-token', idToken)
+      $http.$get(`https://api.cloudhired.com/api/uidtousername`)
       // TODO: need to write failure case
       .then(res => {
         store.commit('setTest', res.username)
