@@ -9,7 +9,7 @@ export default ({ store, app, $http }, inject) => {
       $http.$get(`https://api.cloudhired.com/api/uidtousername`)
       // TODO: need to write failure case
       .then(res => {
-        store.commit('setTest', res.username)
+        store.commit('setUsername', res.username)
       })
     })
   })

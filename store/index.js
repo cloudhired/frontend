@@ -11,7 +11,7 @@ export const mutations = {
   setUser(state, payload) {
     state.user = payload
   },
-  setTest(state, payload) {
+  setUsername(state, payload) {
     state.username = payload
   }
 }
