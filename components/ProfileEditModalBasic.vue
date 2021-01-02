@@ -134,9 +134,8 @@ export default {
         this.personal_site ? this.basicInfo.personal_site = this.personal_site : null;
         // submit change if basic info is not null
         if (Object.keys(this.basicInfo).length != 0) {
-          await this.$http.$post(this.apiEndPoint + '/api/username/' + this.$route.params.id, this.basicInfo)
+          await this.$jwtPost("api/username/gaomengen", this.basicInfo)
           .then((res) => {
-            console.log("Finished", res)
             if (res.error == null ) {
               this.toogleEditModal(this.editModalId)
               this.updateUserInfo(this.basicInfo)

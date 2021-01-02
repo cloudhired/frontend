@@ -98,19 +98,23 @@
               <strong> Certifications </strong>
             </div>
             <ProfileEditButton editBtnId="editCertsBtn" />
-            <ProfileEditModalCerts editModalId="editCertsModal" 
+            <!-- <ProfileEditModalCerts editModalId="editCertsModal" 
               v-bind:isEditCertsBtn="isEditCertsBtn"
-              v-bind:userInfo="userInfo"/>
+              v-bind:userInfo="userInfo"/> -->
           </div>
-          <div class="profile t">
-            <table class="table cert">
-              <tbody>
-                <tr v-for="cert in userInfo.certs" v-bind:key="cert.id">
-                  <td class="pl-0"><figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure></td>
-                  <td> {{ cert.cert_name }} </td>
-                </tr>
-              </tbody>
-            </table>
+          <div v-for="cert in userInfo.certs" v-bind:key="cert.cert_name" class="profile t my-0">
+            <div class="mb-1" style="display:flex; flex:1">
+              <div class="mr-1">
+                <figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure>
+              </div>
+              <div style="flex:1">
+                <p style="line-height:2rem; vertical-align: middle"> {{ cert.cert_name }} </p>
+              </div>
+              <ProfileEditButton editBtnId="editCertsBtn" />
+            </div>
+          </div>
+          <div v-show="isEditCertsBtn" class="profile t mt-0" style="border:1px grey dashed; padding: 0.25rem;">
+            <p style="margin:0 auto">Add new certification</p>
           </div>
         </div>
         <div class="container profile block">
@@ -311,6 +315,7 @@ export default {
       isEditCertsBtn: false,
       isEditPtflBtn: false,
       isEditCoursesBtn: false,
+      isAddCert: false,
     }
   }, 
   async fetch () {
@@ -333,7 +338,7 @@ export default {
   }, 
   computed: {
       user() {
-        // return this.$auth.user
+        return this.$store.state.user
       }
   },
   mounted() {
@@ -349,10 +354,8 @@ export default {
   }, 
   methods: {
     isPageOwner: function () {
-      if (true) {
-      // if (this.$auth.loggedIn) {
-        if (true) {
-        // if (this.$auth.user.email === this.userInfo.email) {
+      if (this.$store.state.user) {
+        if (this.$store.state.user.email === this.userInfo.email) {
           return true
         } else {
           return false
