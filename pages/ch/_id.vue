@@ -92,7 +92,7 @@
             </div>
           </div>
         </div>
-        <div class="container profile block">
+        <div class="container profile block pb-3">
           <div class="profile t">
             <div style="flex:1">
               <strong> Certifications </strong>
