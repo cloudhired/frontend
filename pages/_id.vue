@@ -9,7 +9,7 @@
                 <div class="container">
                   <figure class="image is-128x128">
                     <!-- For now, use static URI. In the future, first check saved picture, then check user.picture -->
-                    <img class="is-rounded" src="../../static/mg_profile.jpg"/>
+                    <img class="is-rounded" src="../static/mg_profile.jpg"/>
                   </figure> 
                 </div>
                 <div class="container">
