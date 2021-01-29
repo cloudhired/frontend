@@ -76,66 +76,6 @@ export default {
     }
   ],
 
-  // serverMiddleware: {
-  //   '/api': '~/api'
-  // },
-
-  // http: {
-  //   proxy: true 
-  // },
-
-  // proxy: {
-  //   '/api': {
-  //     target: process.env.API_EP,
-  //     pathRewrite: {
-  //       '^/api' : '/'
-  //       },
-  //     changeOrigin: true
-  //     }
-  // },
-
-  // auth: {
-  //   redirect: {
-  //     login: '/', // redirect user when not connected
-  //     callback: '/auth/signed-in',
-  //     home: '/'
-  //   },
-  //   rewriteRedirects: true, 
-  //   strategies: {
-  //     local: false,
-  //     auth0: {
-  //       domain: process.env.AUTH0_DOMAIN,
-  //       client_id: process.env.AUTH0_CLIENT_ID
-  //     }
-  //   }
-  // },
-
-//   firebase: {
-//     // options
-//     config: {
-//       // REQUIRED: Official config for firebase.initializeApp(config):
-//       apiKey: "AIzaSyDAwm6I7-Kh4DSeIj4k6IARinOV2RPgA8I",
-//       authDomain: "cloudhired.firebaseapp.com",
-//       databaseURL: "https://cloudhired.firebaseio.com",
-//       projectId: "cloudhired",
-//       storageBucket: "cloudhired.appspot.com",
-//       messagingSenderId: "782780515351",
-//       appId: "1:782780515351:web:8b141a7b7a4d045f650852",
-//       measurementId: "G-2GJWHNQYMK"
-//     },
-//     services: {
-//       firestore: true,
-//       auth: {
-//         // it is recommended to configure either a mutation or action but you can set both
-//         initialize: {
-//           onAuthStateChangedMutation: 'ON_AUTH_STATE_CHANGED_MUTATION',
-//           onAuthStateChangedAction: 'onAuthStateChangedAction',
-//           subscribeManually: false
-//         }
-//       }
-//     },
-//  },
-
   router: {
     // middleware: ['auth']
   },
