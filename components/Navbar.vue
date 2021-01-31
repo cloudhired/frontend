@@ -35,7 +35,7 @@
                   </div>
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <nuxt-link :to="{ name: 'ch-id', params: { id: username }}" class="dropdown-item">Edit Profile</nuxt-link>
+                      <nuxt-link :to="{ name: 'id', params: { id: username }}" class="dropdown-item">Edit Profile</nuxt-link>
                       <!-- <a class="dropdown-item" @click="editProfile()">Edit Profile </a> -->
                       <hr class="dropdown-divider">
                       <a class="dropdown-item" @click="logout()"> Log Out </a>

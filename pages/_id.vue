@@ -98,9 +98,9 @@
               <strong> Certifications </strong>
             </div>
             <ProfileEditButton editBtnId="editCertsBtn" />
-            <!-- <ProfileEditModalCerts editModalId="editCertsModal" 
-              v-bind:isEditCertsBtn="isEditCertsBtn"
-              v-bind:userInfo="userInfo"/> -->
+            <ProfileEditModalCerts editModalId="editCertsModal" 
+              v-bind:isAddCertsBtn="isAddCertsBtn"
+              v-bind:userInfo="userInfo"/>
           </div>
           <div v-for="cert in userInfo.certs" v-bind:key="cert.cert_name" class="profile t my-0">
             <div class="mb-1" style="display:flex; flex:1">
@@ -110,11 +110,15 @@
               <div style="flex:1">
                 <p style="line-height:2rem; vertical-align: middle"> {{ cert.cert_name }} </p>
               </div>
-              <ProfileEditButton editBtnId="editCertsBtn" />
+
+              <!-- <ProfileEditButton editBtnId="editCertsBtn" /> -->
             </div>
           </div>
-          <div v-show="isEditCertsBtn" class="profile t mt-0" style="border:1px grey dashed; padding: 0.25rem;">
-            <p style="margin:0 auto">Add new certification</p>
+          <div v-show="isEditCertsBtn" class="profile t my-0" style="border:1px grey dashed; padding: 0.25rem;">
+            <p style="margin:0 auto">
+              <span class="icon"><fa :icon="['fa', 'plus-square']"/></span> 
+              <a v-on:click="toogleEditModal('editCertsModal')">Add new certification</a>
+            </p>
           </div>
         </div>
         <div class="container profile block">
@@ -313,6 +317,7 @@ export default {
       isEditIntroBtn: false,
       isEditSkillsBtn: false,
       isEditCertsBtn: false,
+      isAddCertsBtn: false, 
       isEditPtflBtn: false,
       isEditCoursesBtn: false,
       isAddCert: false,
@@ -390,7 +395,7 @@ export default {
 
         case "editCertsBtn": this.isEditCertsBtn = !this.isEditCertsBtn
         break;
-        case "editCertsModal": this.isEditCertsBtn = !this.isEditCertsBtn
+        case "editCertsModal": this.isAddCertsBtn = !this.isAddCertsBtn
         break;
 
         case "editPtflBtn": this.isEditPtflBtn = !this.isEditPtflBtn
