@@ -1,12 +1,19 @@
 <template>
-  <div :id="editModalId" v-bind:class="{'modal':true, 'is-active':isEditCertsBtn}">
+  <div :id="editModalId" v-bind:class="{'modal':true, 'is-active':isAddCertsBtn}">
     <div class="modal-background"></div>
     <div class="modal-card">
       <header class="modal-card-head">
-        <p class="modal-card-title">Edit Certs</p>
+        <p class="modal-card-title">Add a Certificate</p>
         <button v-on:click="toogleEditModal(editModalId)" class="delete" aria-label="close"></button>
       </header>
-
+      <section class="modal-card-body">
+        <div class="select is-primary">
+          <select>
+            <option>Select dropdown</option>
+            <option>With options</option>
+          </select>
+        </div>
+      </section>
       <footer class="modal-card-foot">
         <button class="button is-success">Save changes</button>
         <button v-on:click="toogleEditModal(editModalId)" class="button">Cancel</button>
@@ -18,7 +25,7 @@
 <script>
 export default {
   inject: ["isPageOwner", "toogleEditModal", "updateUserInfo"],
-  props: ['editModalId', 'isEditCertsBtn', 'userInfo'], 
+  props: ['editModalId', 'isAddCertsBtn', 'userInfo'], 
 
   data() {
     return {
