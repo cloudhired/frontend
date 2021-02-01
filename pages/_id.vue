@@ -110,6 +110,7 @@
               <div style="flex:1">
                 <p style="line-height:2rem; vertical-align: middle"> {{ cert.cert_name }} </p>
               </div>
+
               <!-- <ProfileEditButton editBtnId="editCertsBtn" /> -->
             </div>
           </div>

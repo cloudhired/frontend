@@ -17,6 +17,7 @@
           <input class="input is-primary" type="text" placeholder="https://">
         </div>
       </section>
+
       <footer class="modal-card-foot">
         <button class="button is-success">Save changes</button>
         <button v-on:click="toogleEditModal(editModalId)" class="button">Cancel</button>
