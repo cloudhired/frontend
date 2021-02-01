@@ -25,9 +25,10 @@
               <div class="navbar-item end" v-if="$store.state.user">
                 <div id="navbar-dropdown" class="dropdown is-right"  v-bind:class="[isDropped ? 'is-active' : '']" @click="isDropped = !isDropped">
                   <div class="dropdown-trigger">
-                    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
-                      <img class="is-rounded mr-2" :src="user.photoURL"/>
-                      <span> {{ user.displayName }} </span>
+                    <button class="button is-ghost" aria-haspopup="true" aria-controls="dropdown-menu">
+                      <figure class="image is-24x24">
+                        <img class="is-rounded mr-2" :src="user.photoURL"/>
+                      </figure>
                       <span class="icon is-small">
                         <span class="icon"><fa icon="angle-down"/></span>
                       </span>
