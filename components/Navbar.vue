@@ -112,5 +112,4 @@ export default {
   border-bottom: solid transparent 1px;
 }
 
-
 </style>
