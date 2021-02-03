@@ -116,8 +116,9 @@
           </div>
           <div v-show="isEditCertsBtn" class="profile t my-0" style="border:1px grey dashed; padding: 0.25rem;">
             <p style="margin:0 auto">
-              <span class="icon"><fa :icon="['fa', 'plus-square']"/></span> 
-              <a v-on:click="toogleEditModal('editCertsModal')">Add new certification</a>
+              <a v-on:click="toogleEditModal('editCertsModal')">
+                <IconWithText height="1.5rem" iconType="fa" icon="plus-square" text="Add new certificate" />
+              </a>
             </p>
           </div>
         </div>
