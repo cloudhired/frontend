@@ -48,7 +48,7 @@
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a v-on:click="toggleSignInModal()">Log in</a>x
+                <a v-on:click="toggleSignInModal()">Sign in</a>
               </div>
             </div>
         </div>
