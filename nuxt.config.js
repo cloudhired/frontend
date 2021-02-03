@@ -50,7 +50,7 @@ export default {
   fontawesome: {
     component: 'fa',
     icons: {
-      solid: ['faEnvelope','faLock','faSignInAlt', 'faAngleDown', 'faGlobeAmericas', 'faBriefcase', 'faBrain', 'faBlog', 'faEnvelopeSquare', 'faDumbbell', 'faEdit', 'faPlusSquare'],
+      solid: ['faEnvelope','faLock','faSignInAlt', 'faAngleDown', 'faGlobeAmericas', 'faBriefcase', 'faBrain', 'faBlog', 'faEnvelopeSquare', 'faDumbbell', 'faEdit', 'faPlusSquare', 'faUserEdit', 'faSignOutAlt'],
       brands: ['faGoogle', 'faLinkedin', 'faGithubSquare']
     }
   },

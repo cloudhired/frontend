@@ -36,16 +36,19 @@
                   </div>
                   <div class="dropdown-menu" id="dropdown-menu" role="menu">
                     <div class="dropdown-content">
-                      <nuxt-link :to="{ name: 'id', params: { id: username }}" class="dropdown-item">Edit Profile</nuxt-link>
-                      <!-- <a class="dropdown-item" @click="editProfile()">Edit Profile </a> -->
-                      <hr class="dropdown-divider">
-                      <a class="dropdown-item" @click="logout()"> Log Out </a>
+                      <nuxt-link :to="{ name: 'id', params: { id: username }}" class="dropdown-item">
+                        <IconWithText height="1.5rem" iconType="fa" icon="user-edit" text="Edit Profile" /> 
+                      </nuxt-link>
+                      <!-- <hr class="dropdown-divider"> -->
+                      <a class="dropdown-item" @click="logout()"> 
+                        <IconWithText height="1.5rem" iconType="fa" icon="sign-out-alt" text="Sign out" />
+                      </a>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="navbar-item" v-else>
-                <a v-on:click="toggleSignInModal()">Log in</a>
+                <a v-on:click="toggleSignInModal()">Log in</a>x
               </div>
             </div>
         </div>
@@ -54,8 +57,7 @@
 </template>
 
 <script>
-export default {
-  // auth: false, 
+export default { 
   data() {
     return {
       isDropped: false, 
@@ -104,6 +106,10 @@ export default {
   background-color: $primary;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.navbar-item.end a {
+  border-bottom: solid transparent 1px;
 }
 
 
