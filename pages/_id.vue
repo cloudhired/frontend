@@ -332,7 +332,7 @@ export default {
   },
   head() {
     return {
-      title: this.userInfo.fname + " " + this.userInfo.lname + " | CloudHired",
+      title:  this.getTitle(),
         meta: [
           {
             hid: 'description',
@@ -359,6 +359,13 @@ export default {
     })
   }, 
   methods: {
+    getTitle: function () {
+        if (this.userInfo.fname !== undefined) {
+          return `${this.userInfo.fname} ${this.userInfo.lname} | CloudHired`
+        } else {
+          return `Loading...`
+        }
+    },
     isPageOwner: function () {
       if (this.$store.state.user) {
         if (this.$store.state.user.email === this.userInfo.email) {
