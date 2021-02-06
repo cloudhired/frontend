@@ -8,18 +8,18 @@
       </header>
       <section class="modal-card-body">
         <div class="select is-primary" style="width:100%">
-          <select style="width:100%">
-            <option> Select one certification </option>
-            <option v-for="cert in certs.results" :key="cert.name"> {{ cert.name }} </option>
+          <select v-model="selectedCert" style="width:100%">
+            <option disabled value=""> Select one certification </option>
+            <option v-for="cert in certs.results" :key="cert.id" v-bind:value="cert"> {{ cert.name }} </option>
           </select>
         </div>
         <div class="mt-1" style="width:100%">
-          <input class="input is-primary" type="text" placeholder="https://">
+          <input v-model="certURL" class="input is-primary" type="text" placeholder="https://">
         </div>
       </section>
 
       <footer class="modal-card-foot">
-        <button class="button is-success">Save changes</button>
+        <button v-on:click="sbtCerts()" class="button is-success">Save changes</button>
         <button v-on:click="toogleEditModal(editModalId)" class="button">Cancel</button>
       </footer>
     </div>
@@ -33,12 +33,38 @@ export default {
 
   data() {
     return {
+      selectedCert: '',
+      certURL: '',
       isInEdit: false, 
-      certs: this.userInfo.certs || [],
+      certs: [],
+      currentCerts: this.userInfo.certs || [],
+      certsInfo: {}
     }
   },
   async fetch() {
     this.certs = await this.$http.$get(`https://api.cloudhired.com/api/allcerts`)
+  }, 
+  methods: {
+    sbtCerts: async function () {
+      if (this.isPageOwner() && this.selectedCert !== '') {
+        this.currentCerts.push({ "cert_id": this.selectedCert.id, "cert_name": this.selectedCert.name, "verify_link": this.certURL })
+        this.certsInfo.certs = this.currentCerts
+        await this.$jwtPost(`api/username/${this.userInfo.username}`, this.certsInfo)
+          .then((res) => {
+            console.log("Finished", res)
+            if (res.error == null ) {
+              this.toogleEditModal(this.editModalId)
+              this.updateUserInfo(this.certsInfo)
+            } else {
+              // TODO: remind user of error when updating
+              alert("not successful")
+            }
+
+          }, () => {
+            console.log("Failed")
+          })
+      }
+    }
   }
 }
 </script>
