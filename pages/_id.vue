@@ -105,7 +105,7 @@
           <div v-for="cert in userInfo.certs" v-bind:key="cert.cert_name" class="profile t my-0">
             <div class="mb-1" style="display:flex; flex:1">
               <div class="mr-1">
-                <figure class="image is-32x32"><img src="https://bulma.io/images/placeholders/48x48.png"></figure>
+                <figure class="image is-32x32"><img src="http://static.cloudhired.com/cert_icons/gcp_ace.png"></figure>
               </div>
               <div style="flex:1">
                 <p style="line-height:2rem; vertical-align: middle"> {{ cert.cert_name }} </p>
@@ -326,9 +326,8 @@ export default {
   }, 
   async fetch () {
     // TODO: I believe I shouldn't have to add domain name in prod. Need more research. 
-    this.userInfo = await this.$http.$get('https://api.cloudhired.com/api/username/' + this.$route.params.id)
+    this.userInfo = await this.$http.$get(`https://api.cloudhired.com/api/username/${this.$route.params.id}`)
     this.userInfo = this.userInfo.data
-      // .then(userInfo => userInfo)
   },
   head() {
     return {
