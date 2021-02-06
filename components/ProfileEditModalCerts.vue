@@ -9,8 +9,8 @@
       <section class="modal-card-body">
         <div class="select is-primary" style="width:100%">
           <select style="width:100%">
-            <option>Select a certificate to add from dropdown</option>
-            <option>With options</option>
+            <option> Select one certification </option>
+            <option v-for="cert in certs.results" :key="cert.name"> {{ cert.name }} </option>
           </select>
         </div>
         <div class="mt-1" style="width:100%">
@@ -34,11 +34,11 @@ export default {
   data() {
     return {
       isInEdit: false, 
-      certs: [],
+      certs: this.userInfo.certs || [],
     }
   },
   async fetch() {
-    this.certs = await this.$http.$get('https://api.nuxtjs.dev/posts')
+    this.certs = await this.$http.$get(`https://api.cloudhired.com/api/allcerts`)
   }
 }
 </script>

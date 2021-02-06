@@ -39,7 +39,7 @@ export default {
           payload.email = this.userInfo.email 
           payload.setInfo = this.introInfo
           console.log(payload)
-          await this.$jwtPost("api/username/gaomengen", this.introInfo)
+          await this.$jwtPost(`api/username/${this.userInfo.username}`, this.introInfo)
           .then((res) => {
             console.log("Finished", res)
             if (res.error == null ) {
