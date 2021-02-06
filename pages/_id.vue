@@ -104,8 +104,8 @@
           </div>
           <div v-for="cert in userInfo.certs" v-bind:key="cert.cert_name" class="profile t my-0">
             <div class="mb-1" style="display:flex; flex:1">
-              <div class="mr-1">
-                <figure class="image is-32x32"><img src="http://static.cloudhired.com/cert_icons/gcp_ace.png"></figure>
+              <div class="mr-2">
+                <figure class="image is-32x32"><img :src="staticResourceURL(`cert_icons/48x48/${cert.cert_id}.png`)"></figure>
               </div>
               <div style="flex:1">
                 <p style="line-height:2rem; vertical-align: middle"> {{ cert.cert_name }} </p>
@@ -364,6 +364,9 @@ export default {
         } else {
           return `Loading...`
         }
+    },
+    staticResourceURL: function (path) {
+      return `http://static.cloudhired.com/${path}`
     },
     isPageOwner: function () {
       if (this.$store.state.user) {
