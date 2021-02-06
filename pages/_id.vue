@@ -366,7 +366,11 @@ export default {
         }
     },
     staticResourceURL: function (path) {
-      return `http://static.cloudhired.com/${path}`
+      // due to mixed content between HTTP and HTTPS, HTTP content will not load. 
+      // when in production, set up LB to have HTTPS to load static content. 
+      // for now, just use GCS endpoint.
+      // return `http://static.cloudhired.com/${path}`
+      return `https://storage.googleapis.com/static.cloudhired.com/${path}`
     },
     isPageOwner: function () {
       if (this.$store.state.user) {
