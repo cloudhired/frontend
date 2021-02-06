@@ -370,7 +370,7 @@ export default {
       // when in production, set up LB to have HTTPS to load static content. 
       // for now, just use GCS endpoint.
       // return `http://static.cloudhired.com/${path}`
-      return `https://storage.googleapis.com/static.cloudhired.com/`
+      return `https://storage.googleapis.com/static.cloudhired.com/${path}`
     },
     isPageOwner: function () {
       if (this.$store.state.user) {
